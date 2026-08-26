@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section class="form"><p class="eyebrow">PRESTATION</p><h1>{{service.name}}</h1><p>{{service.description|linebreaks}}</p><a class="btn" href="{% url 'quote' %}">Demander un devis</a></section>{% endblock %}

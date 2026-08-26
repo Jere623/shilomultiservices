@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block title %}Devis – Shilo Multi-Services{% endblock %}{% block content %}<section class="form"><p class="eyebrow">DEVIS GRATUIT</p><h1>Votre demande</h1><form method="post">{% csrf_token %}{{form.as_p}}<button class="btn">Envoyer ma demande</button></form></section>{% endblock %}

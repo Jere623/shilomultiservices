@@ -1,5 +1,8 @@
-Django>=5.2,<6.0
-gunicorn>=23.0
-whitenoise>=6.9
-dj-database-url>=2.3
-psycopg[binary]>=3.2
+#!/usr/bin/env bash
+set -o errexit
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+
+python manage.py collectstatic --no-input
+python manage.py migrate

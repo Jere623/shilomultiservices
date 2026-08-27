@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Django>=5.2,<6.0
 gunicorn>=23.0
 whitenoise>=6.9
 dj-database-url>=2.3
 psycopg[binary]>=3.2
+=======
+Django==5.2.17
+gunicorn==23.0.0
+whitenoise==6.9.0
+dj-database-url==2.3.0
+psycopg[binary]==3.2.10
+>>>>>>> bdcbb828cd34e3a4357b85a70cc4173d7000a907

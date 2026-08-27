@@ -1,153 +1,22 @@
 {% load static %}
-
 <!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>{% block title %}Shilo Multi-Services{% endblock %}</title>
-
-    <meta name="description"
-          content="Shilo Multi-Services - Nettoyage, entretien et services professionnels pour particuliers, entreprises et collectivités.">
-
-    <meta name="theme-color" content="#176b4d">
-
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shilo Multi-Services : nettoyage et entretien professionnel pour particuliers et entreprises.">
+  <meta name="theme-color" content="#12364f">
+  <title>{% block title %}Shilo Multi-Services{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
 </head>
-
 <body>
-
-<header class="site-header">
-
-    <div class="header-container">
-
-        <a class="logo" href="{% url 'home' %}" aria-label="Shilo Multi-Services - Accueil">
-            <img
-                src="{% static 'images/logo-shilo.png' %}"
-                alt="Shilo Multi-Services"
-            >
-        </a>
-
-        <nav class="main-nav" aria-label="Navigation principale">
-
-            <a href="{% url 'home' %}">Accueil</a>
-
-            <a href="{% url 'home' %}#services">
-                Services
-            </a>
-
-            <a href="{% url 'home' %}#apropos">
-                À propos
-            </a>
-
-            <a href="{% url 'contact' %}">
-                Contact
-            </a>
-
-            <a class="btn small" href="{% url 'quote' %}">
-                Demander un devis
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-{% if messages %}
-    <div class="flash-container">
-
-        {% for message in messages %}
-
-            <div class="flash">
-                {{ message }}
-            </div>
-
-        {% endfor %}
-
-    </div>
-{% endif %}
-
-
-<main>
-    {% block content %}
-    {% endblock %}
-</main>
-
-
-<footer class="site-footer">
-
-    <div class="footer-container">
-
-        <div class="footer-brand">
-
-            <img
-                src="{% static 'images/logo-shilo.png' %}"
-                alt="Shilo Multi-Services"
-            >
-
-            <p>
-                Nettoyage, entretien et services professionnels.
-            </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <h3>Navigation</h3>
-
-            <a href="{% url 'home' %}">
-                Accueil
-            </a>
-
-            <a href="{% url 'home' %}#services">
-                Services
-            </a>
-
-            <a href="{% url 'home' %}#apropos">
-                À propos
-            </a>
-
-            <a href="{% url 'contact' %}">
-                Contact
-            </a>
-
-        </div>
-
-
-        <div class="footer-contact">
-
-            <h3>Contact</h3>
-
-            <a href="mailto:contact@shilomultiservices.com">
-                contact@shilomultiservices.com
-            </a>
-
-            <a href="{% url 'quote' %}">
-                Demander un devis
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <span>
-            © {% now 'Y' %} Shilo Multi-Services
-        </span>
-
-        <span>
-            Tous droits réservés.
-        </span>
-
-    </div>
-
-</footer>
-
+  <div class="topbar"><div class="container">Nettoyage &amp; entretien pour particuliers et professionnels <a href="tel:+33667800455">· 06 67 80 04 55</a></div></div>
+  <header class="site-header"><div class="container header-inner">
+    <a class="logo" href="{% url 'home' %}" aria-label="Shilo Multi-Services, accueil"><img src="{% static 'images/logo-shilo.png' %}" alt="Shilo Multi-Services"></a>
+    <nav aria-label="Navigation principale"><a href="{% url 'home' %}#services">Services</a><a href="{% url 'home' %}#apropos">Notre engagement</a><a href="{% url 'contact' %}">Contact</a><a class="button nav-cta" href="{% url 'quote' %}">Demander un devis</a></nav>
+  </div></header>
+  {% if messages %}<div class="flash-container">{% for message in messages %}<div class="flash">{{ message }}</div>{% endfor %}</div>{% endif %}
+  {% block content %}{% endblock %}
+  <footer><div class="container footer-grid"><div><img class="footer-logo" src="{% static 'images/logo-shilo.png' %}" alt="Shilo Multi-Services"><p>Nettoyage, entretien et prestations adaptées à vos besoins.</p></div><div><strong>Navigation</strong><a href="{% url 'home' %}">Accueil</a><a href="{% url 'home' %}#services">Services</a><a href="{% url 'contact' %}">Contact</a></div><div><strong>Contact</strong><a href="tel:+33667800455">06 67 80 04 55</a><a href="mailto:contact@shilomultiservices.com">contact@shilomultiservices.com</a><a href="https://wa.me/33667800455" target="_blank" rel="noopener">WhatsApp</a></div></div><div class="container footer-bottom">© {% now 'Y' %} Shilo Multi-Services · Tous droits réservés</div></footer>
 </body>
 </html>

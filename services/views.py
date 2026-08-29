@@ -1,14 +1,93 @@
 from django.contrib import messages
-from django.shortcuts import render,redirect,get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+
 from .models import Service
-from .forms import QuoteForm,ContactForm
-def home(request): return render(request,'home.html',{'services':Service.objects.filter(active=True)})
+from .forms import QuoteForm, ContactForm
+
+
+def home(request):
+    services = Service.objects.filter(
+        active=True
+    ).order_by('id')
+
+    return render(
+        request,
+        'home.html',
+        {
+            'services': services
+        }
+    )
+
+
 def quote(request):
-    form=QuoteForm(request.POST or None)
-    if request.method=='POST' and form.is_valid(): form.save(); messages.success(request,'Votre demande de devis a bien été envoyée.'); return redirect('quote')
-    return render(request,'quote.html',{'form':form})
+    form = QuoteForm(request.POST or None)
+
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+
+        messages.success(
+            request,
+            'Votre demande de devis a bien été envoyée.'
+        )
+
+        return redirect('quote')
+
+    return render(
+        request,
+        'quote.html',
+        {
+            'form': form
+        }
+    )
+
+
 def contact(request):
-    form=ContactForm(request.POST or None)
-    if request.method=='POST' and form.is_valid(): form.save(); messages.success(request,'Votre message a bien été envoyé.'); return redirect('contact')
-    return render(request,'contact.html',{'form':form})
-def detail(request,pk): return render(request,'service_detail.html',{'service':get_object_or_404(Service,pk=pk,active=True)})
+    form = ContactForm(request.POST or None)
+
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+
+        messages.success(
+            request,
+            'Votre message a bien été envoyé.'
+        )
+
+        return redirect('contact')
+
+    return render(
+        request,
+        'contact.html',
+        {
+            'form': form
+        }
+    )
+
+
+def detail(request, pk):
+    service = get_object_or_404(
+        Service,
+        pk=pk,
+        active=True
+    )
+
+    included_services = [
+        item.strip()
+        for item in service.included_services.splitlines()
+        if item.strip()
+    ]
+
+    benefits = [
+        item.strip()
+        for item in service.benefits.splitlines()
+        if item.strip()
+    ]
+
+    return render(
+        request,
+        'service_detail.html',
+        {
+            'service': service,
+            'included_services': included_services,
+            'benefits': benefits,
+        }
+    )

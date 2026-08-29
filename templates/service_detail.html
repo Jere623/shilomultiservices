@@ -6,208 +6,102 @@
 
 {% block content %}
 
-<section class="service-detail">
+<section class="service-hero">
 
-    <div class="service-detail-header">
+    <div class="service-hero-content">
 
-        <p class="eyebrow">
-            NOS PRESTATIONS
-        </p>
+        <p class="eyebrow">NOS PRESTATIONS</p>
 
-        <h1>
-            {{ service.name }}
-        </h1>
+        <h1>{{ service.name }}</h1>
 
         <p class="service-intro">
             {{ service.short_description }}
         </p>
 
+        <a class="btn"
+           href="{% url 'quote' %}?service={{ service.id }}">
+            Demander un devis
+        </a>
+
     </div>
 
-
-    <div class="service-detail-content">
-
-        <main class="service-main">
-
-            <section class="service-section">
-
-                <p class="service-label">
-                    À PROPOS DE LA PRESTATION
-                </p>
-
-                <h2>
-                    Une solution adaptée à vos besoins
-                </h2>
-
-                <div class="service-text">
-                    {{ service.description|linebreaks }}
-                </div>
-
-            </section>
+</section>
 
 
-            {% if included_services %}
+<section class="service-content">
 
-            <section class="service-section">
+    <div class="service-main">
 
-                <p class="service-label">
-                    NOS INTERVENTIONS
-                </p>
+        <p class="eyebrow">NOTRE SERVICE</p>
 
-                <h2>
-                    Ce que nous proposons
-                </h2>
+        <h2>Une prestation adaptée à vos besoins</h2>
 
-                <ul class="service-list">
-
-                    {% for item in included_services %}
-
-                    <li>
-                        <span>✓</span>
-                        {{ item }}
-                    </li>
-
-                    {% endfor %}
-
-                </ul>
-
-            </section>
-
-            {% endif %}
-
-
-            {% if service.target_clients %}
-
-            <section class="service-section">
-
-                <p class="service-label">
-                    CLIENTS CONCERNÉS
-                </p>
-
-                <h2>
-                    Pour qui ?
-                </h2>
-
-                <div class="service-text">
-                    {{ service.target_clients|linebreaks }}
-                </div>
-
-            </section>
-
-            {% endif %}
-
-
-            {% if service.frequency %}
-
-            <section class="service-section">
-
-                <p class="service-label">
-                    ORGANISATION
-                </p>
-
-                <h2>
-                    Fréquence des interventions
-                </h2>
-
-                <p>
-                    {{ service.frequency }}
-                </p>
-
-            </section>
-
-            {% endif %}
-
-
-            {% if benefits %}
-
-            <section class="service-section">
-
-                <p class="service-label">
-                    NOS ENGAGEMENTS
-                </p>
-
-                <h2>
-                    Les avantages
-                </h2>
-
-                <ul class="service-list">
-
-                    {% for item in benefits %}
-
-                    <li>
-                        <span>✓</span>
-                        {{ item }}
-                    </li>
-
-                    {% endfor %}
-
-                </ul>
-
-            </section>
-
-            {% endif %}
-
-        </main>
-
-
-        <aside class="service-sidebar">
-
-            <div class="service-card">
-
-                <p class="eyebrow">
-                    VOTRE PROJET
-                </p>
-
-                <h2>
-                    Besoin de cette prestation ?
-                </h2>
-
-                <p>
-                    Contactez Shilo Multi-Services pour
-                    nous présenter votre besoin et obtenir
-                    une proposition adaptée.
-                </p>
-
-                <a
-                    class="btn service-btn"
-                    href="{% url 'quote' %}"
-                >
-                    Demander un devis
-                </a>
-
-                <a
-                    class="service-contact-link"
-                    href="{% url 'contact' %}"
-                >
-                    Nous contacter →
-                </a>
-
-            </div>
-
-
-            <div class="service-info-box">
-
-                <strong>
-                    Une demande particulière ?
-                </strong>
-
-                <p>
-                    Chaque intervention peut être adaptée
-                    aux caractéristiques de votre espace
-                    et à vos besoins.
-                </p>
-
-            </div>
-
-        </aside>
+        <div class="service-description">
+            {{ service.description|linebreaks }}
+        </div>
 
     </div>
 
 
-    <div class="service-back">
+    <div class="service-sidebar">
 
-        <a href="{% url 'home' %}#services">
-            ← Retour à nos prestations
+        <div class="info-card">
+
+            <h3>Pourquoi choisir Shilo Multi-Services ?</h3>
+
+            <ul>
+                <li>✓ Une prestation adaptée à vos besoins</li>
+                <li>✓ Une équipe professionnelle et organisée</li>
+                <li>✓ Des solutions pour particuliers et professionnels</li>
+                <li>✓ Un accompagnement personnalisé</li>
+                <li>✓ Un devis clair et sans engagement</li>
+            </ul>
+
+        </div>
+
+
+        <div class="info-card highlight">
+
+            <h3>Besoin d'un devis ?</h3>
+
+            <p>
+                Expliquez-nous votre besoin et recevez une proposition
+                adaptée à votre situation.
+            </p>
+
+            <a class="btn"
+               href="{% url 'quote' %}?service={{ service.id }}">
+                Demander un devis
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-cta">
+
+    <p class="eyebrow">UNE QUESTION ?</p>
+
+    <h2>Notre équipe est à votre écoute</h2>
+
+    <p>
+        Vous souhaitez obtenir davantage d'informations avant de faire
+        votre demande ? Contactez-nous directement.
+    </p>
+
+    <div class="cta-actions">
+
+        <a class="btn"
+           href="{% url 'contact' %}">
+            Nous contacter
+        </a>
+
+        <a class="btn btn-outline"
+           href="{% url 'quote' %}?service={{ service.id }}">
+            Obtenir un devis
         </a>
 
     </div>

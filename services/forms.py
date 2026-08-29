@@ -21,7 +21,7 @@ class QuoteForm(forms.ModelForm):
             'email': 'Adresse e-mail',
             'phone': 'Numéro de téléphone',
             'service': 'Service souhaité',
-            'address': 'Adresse de l’intervention',
+            'address': "Adresse de l’intervention",
             'preferred_date': 'Date souhaitée',
             'message': 'Décrivez votre besoin'
         }
@@ -47,7 +47,7 @@ class QuoteForm(forms.ModelForm):
 
             'address': forms.TextInput(
                 attrs={
-                    'placeholder': 'Adresse ou ville de l’intervention'
+                    'placeholder': "Adresse ou ville de l’intervention"
                 }
             ),
 
@@ -61,6 +61,52 @@ class QuoteForm(forms.ModelForm):
                 attrs={
                     'rows': 6,
                     'placeholder': 'Expliquez-nous votre besoin : surface, fréquence souhaitée, nombre de pièces, type de locaux, etc.'
+                }
+            )
+        }
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+
+        fields = [
+            'name',
+            'email',
+            'phone',
+            'message'
+        ]
+
+        labels = {
+            'name': 'Nom et prénom',
+            'email': 'Adresse e-mail',
+            'phone': 'Numéro de téléphone',
+            'message': 'Votre message'
+        }
+
+        widgets = {
+            'name': forms.TextInput(
+                attrs={
+                    'placeholder': 'Votre nom et prénom'
+                }
+            ),
+
+            'email': forms.EmailInput(
+                attrs={
+                    'placeholder': 'exemple@email.com'
+                }
+            ),
+
+            'phone': forms.TextInput(
+                attrs={
+                    'placeholder': 'Votre numéro de téléphone'
+                }
+            ),
+
+            'message': forms.Textarea(
+                attrs={
+                    'rows': 6,
+                    'placeholder': 'Comment pouvons-nous vous aider ?'
                 }
             )
         }

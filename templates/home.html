@@ -1,1 +1,209 @@
-{% extends 'base.html' %}{% block content %}<section class="hero"><div><p class="eyebrow">NETTOYAGE · ENTRETIEN · MULTISERVICES</p><h1>Un environnement propre.<br><em>Un service de confiance.</em></h1><p>Des prestations de nettoyage adaptées aux particuliers, professionnels et collectivités.</p><a class="btn" href="{% url 'quote' %}">Obtenir un devis</a></div><div class="panel"><b>Qualité & sérénité</b><p>Une organisation professionnelle, une écoute attentive et des solutions adaptées.</p></div></section><section id="services" class="section"><p class="eyebrow">NOS PRESTATIONS</p><h2>Des solutions pour chaque espace</h2><div class="grid">{% for s in services %}<article><h3>{{s.name}}</h3><p>{{s.short_description}}</p><a href="{% url 'detail' s.pk %}">En savoir plus →</a></article>{% empty %}<article><h3>Nettoyage professionnel</h3><p>Ajoutez vos prestations depuis /admin/.</p></article>{% endfor %}</div></section><section id="apropos" class="split"><div><p class="eyebrow">POURQUOI SHILO ?</p><h2>Professionnalisme, proximité et efficacité.</h2></div><div><p>Nous construisons une solution adaptée à chaque besoin, avec un suivi clair et un service de proximité.</p><a class="btn" href="{% url 'contact' %}">Nous contacter</a></div></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}
+Shilo Multi-Services | Nettoyage et entretien professionnel
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            NETTOYAGE · ENTRETIEN · MULTISERVICES
+        </p>
+
+        <h1>
+            Un environnement propre.
+            <br>
+            <em>Un service de confiance.</em>
+        </h1>
+
+        <p>
+            Shilo Multi-Services vous accompagne dans
+            l'entretien, le nettoyage et la remise en état
+            de vos espaces, pour les particuliers comme
+            pour les professionnels.
+        </p>
+
+        <div class="hero-actions">
+
+            <a class="btn" href="{% url 'quote' %}">
+                Demander un devis
+            </a>
+
+            <a class="btn-outline" href="#services">
+                Découvrir nos services
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-icon">
+            ✓
+        </div>
+
+        <h2>
+            Qualité & sérénité
+        </h2>
+
+        <p>
+            Une organisation professionnelle, une écoute
+            attentive et des solutions adaptées à chaque
+            besoin.
+        </p>
+
+        <div class="panel-line"></div>
+
+        <strong>
+            Un service pensé pour vous.
+        </strong>
+
+    </div>
+
+</section>
+
+
+<section id="services" class="section services-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            NOS PRESTATIONS
+        </p>
+
+        <h2>
+            Des solutions pour chaque espace
+        </h2>
+
+        <p>
+            Découvrez nos différentes prestations de
+            nettoyage, d'entretien et de multiservices.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        {% for service in services %}
+
+        <article class="service-card-home">
+
+            <div class="service-number">
+                {{ forloop.counter|stringformat:"02d" }}
+            </div>
+
+            <h3>
+                {{ service.name }}
+            </h3>
+
+            <p>
+                {{ service.short_description }}
+            </p>
+
+            <a
+                href="{% url 'detail' service.pk %}"
+                class="service-link"
+            >
+                En savoir plus →
+            </a>
+
+        </article>
+
+        {% empty %}
+
+        <article class="service-card-home">
+
+            <h3>
+                Nos prestations arrivent bientôt
+            </h3>
+
+            <p>
+                Les services de Shilo Multi-Services
+                seront prochainement disponibles.
+            </p>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section id="apropos" class="split">
+
+    <div>
+
+        <p class="eyebrow">
+            POURQUOI SHILO ?
+        </p>
+
+        <h2>
+            Professionnalisme, proximité et efficacité.
+        </h2>
+
+    </div>
+
+    <div>
+
+        <p>
+            Nous mettons notre savoir-faire au service
+            des particuliers, des entreprises et des
+            collectivités afin de proposer des solutions
+            adaptées à chaque environnement.
+        </p>
+
+        <p>
+            Notre priorité : vous offrir un service
+            sérieux, flexible et adapté à vos besoins.
+        </p>
+
+        <a
+            class="btn"
+            href="{% url 'contact' %}"
+        >
+            Nous contacter
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="cta-section">
+
+    <div>
+
+        <p class="eyebrow">
+            BESOIN D'UNE INTERVENTION ?
+        </p>
+
+        <h2>
+            Parlons de votre projet.
+        </h2>
+
+        <p>
+            Décrivez-nous votre besoin et recevez une
+            réponse adaptée à votre situation.
+        </p>
+
+        <a
+            class="btn"
+            href="{% url 'quote' %}"
+        >
+            Obtenir un devis
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

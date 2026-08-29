@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}
-{{ service.name }} | Shilo Multi-Services
-{% endblock %}
+{% block title %}{{ service.name }} | Shilo Multi-Services{% endblock %}
 
 {% block content %}
 
-<section class="service-hero">
+<section class="service-page">
 
-    <div class="service-hero-content">
+    <div class="service-header">
 
         <p class="eyebrow">NOS PRESTATIONS</p>
 
@@ -18,90 +16,64 @@
             {{ service.short_description }}
         </p>
 
-        <a class="btn"
-           href="{% url 'quote' %}?service={{ service.id }}">
-            Demander un devis
-        </a>
-
-    </div>
-
-</section>
-
-
-<section class="service-content">
-
-    <div class="service-main">
-
-        <p class="eyebrow">NOTRE SERVICE</p>
-
-        <h2>Une prestation adaptée à vos besoins</h2>
-
-        <div class="service-description">
-            {{ service.description|linebreaks }}
-        </div>
-
     </div>
 
 
-    <div class="service-sidebar">
+    <div class="service-layout">
 
-        <div class="info-card">
+        <main class="service-main">
 
-            <h3>Pourquoi choisir Shilo Multi-Services ?</h3>
+            <h2>Présentation de la prestation</h2>
 
-            <ul>
-                <li>✓ Une prestation adaptée à vos besoins</li>
-                <li>✓ Une équipe professionnelle et organisée</li>
-                <li>✓ Des solutions pour particuliers et professionnels</li>
-                <li>✓ Un accompagnement personnalisé</li>
-                <li>✓ Un devis clair et sans engagement</li>
-            </ul>
+            <div class="service-description">
+                {{ service.description|linebreaks }}
+            </div>
 
-        </div>
+        </main>
 
 
-        <div class="info-card highlight">
+        <aside class="service-sidebar">
 
-            <h3>Besoin d'un devis ?</h3>
+            <div class="service-card">
+
+                <p class="eyebrow">SHILO MULTI-SERVICES</p>
+
+                <h3>Une prestation adaptée à vos besoins</h3>
+
+                <ul>
+                    <li>Intervention professionnelle</li>
+                    <li>Service adapté à vos besoins</li>
+                    <li>Solutions pour particuliers et professionnels</li>
+                    <li>Accompagnement personnalisé</li>
+                </ul>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <div class="service-cta">
+
+        <div>
+            <p class="eyebrow">VOUS AVEZ UN PROJET ?</p>
+
+            <h2>
+                Parlons de votre besoin.
+            </h2>
 
             <p>
-                Expliquez-nous votre besoin et recevez une proposition
-                adaptée à votre situation.
+                Décrivez-nous votre projet et nous étudierons
+                votre demande afin de vous proposer une solution adaptée.
             </p>
-
-            <a class="btn"
-               href="{% url 'quote' %}?service={{ service.id }}">
-                Demander un devis
-            </a>
-
         </div>
 
-    </div>
-
-</section>
-
-
-<section class="service-cta">
-
-    <p class="eyebrow">UNE QUESTION ?</p>
-
-    <h2>Notre équipe est à votre écoute</h2>
-
-    <p>
-        Vous souhaitez obtenir davantage d'informations avant de faire
-        votre demande ? Contactez-nous directement.
-    </p>
-
-    <div class="cta-actions">
-
-        <a class="btn"
-           href="{% url 'contact' %}">
-            Nous contacter
-        </a>
-
-        <a class="btn btn-outline"
-           href="{% url 'quote' %}?service={{ service.id }}">
-            Obtenir un devis
+        <a
+            class="btn"
+            href="{% url 'quote' %}?service={{ service.pk }}"
+        >
+            Demander un devis
         </a>
 
     </div>

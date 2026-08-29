@@ -921,3 +921,254 @@ h1 em {
     }
 
 }
+
+/* =========================================
+   PHASE 3 - PAGES SERVICES ET DEVIS
+========================================= */
+
+.service-hero {
+    padding: 100px 10%;
+    background: linear-gradient(135deg, #f7f4ec, #e6efe8);
+}
+
+.service-hero-content {
+    max-width: 850px;
+}
+
+.service-hero h1 {
+    margin-bottom: 20px;
+}
+
+.service-intro {
+    max-width: 700px;
+    font-size: 20px;
+    color: #526158;
+    margin-bottom: 30px;
+}
+
+
+/* CONTENU DU SERVICE */
+
+.service-content {
+    padding: 90px 10%;
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.service-main h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-top: 10px;
+}
+
+.service-description {
+    margin-top: 30px;
+    font-size: 17px;
+    color: #526158;
+}
+
+
+/* CARTES */
+
+.service-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    background: #fffdf8;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #e8e1d2;
+    box-shadow: 0 15px 45px rgba(0,0,0,.05);
+}
+
+.info-card h3 {
+    margin-top: 0;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.info-card li {
+    margin-bottom: 13px;
+    color: #526158;
+}
+
+.info-card.highlight {
+    background: var(--dark);
+    color: white;
+}
+
+.info-card.highlight p {
+    color: #dbe3dd;
+}
+
+
+/* APPEL À L'ACTION */
+
+.service-cta {
+    text-align: center;
+    padding: 90px 10%;
+    background: #e6efe8;
+}
+
+.service-cta h2 {
+    font-size: 42px;
+    margin: 10px 0 15px;
+}
+
+.service-cta > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #526158;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--green) !important;
+    border: 2px solid var(--green);
+}
+
+
+/* PAGE DEVIS */
+
+.form-page {
+    padding: 90px 10%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.form-header {
+    max-width: 750px;
+    margin-bottom: 35px;
+}
+
+.form-header h1 {
+    font-size: 52px;
+}
+
+.form-header p:not(.eyebrow) {
+    font-size: 18px;
+    color: #526158;
+}
+
+
+.selected-service {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #e6efe8;
+    border-left: 5px solid var(--green);
+    padding: 18px 22px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.selected-service span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--green);
+    font-weight: 700;
+}
+
+.selected-service strong {
+    font-size: 20px;
+}
+
+
+.form-card {
+    background: #fffdf8;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #e8e1d2;
+    box-shadow: 0 20px 60px rgba(0,0,0,.06);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.form-field label {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 14px;
+    font: inherit;
+    border: 1px solid #d8d2c4;
+    border-radius: 10px;
+    background: white;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+.field-error {
+    color: #b42318;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 25px;
+    color: #66736b;
+    font-size: 14px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .service-hero,
+    .service-content,
+    .service-cta,
+    .form-page {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .service-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .service-main h2,
+    .service-cta h2 {
+        font-size: 34px;
+    }
+
+    .form-header h1 {
+        font-size: 40px;
+    }
+
+    .form-card {
+        padding: 25px 20px;
+    }
+}

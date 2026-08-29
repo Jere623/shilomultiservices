@@ -1,1 +1,81 @@
-{% extends 'base.html' %}{% block title %}Devis – Shilo Multi-Services{% endblock %}{% block content %}<section class="form"><p class="eyebrow">DEVIS GRATUIT</p><h1>Votre demande</h1><form method="post">{% csrf_token %}{{form.as_p}}<button class="btn">Envoyer ma demande</button></form></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}
+Demander un devis | Shilo Multi-Services
+{% endblock %}
+
+{% block content %}
+
+<section class="form-page">
+
+    <div class="form-header">
+
+        <p class="eyebrow">DEMANDE DE DEVIS</p>
+
+        <h1>Obtenez votre devis personnalisé</h1>
+
+        <p>
+            Décrivez votre besoin. Notre équipe vous recontactera afin
+            de vous proposer une solution adaptée.
+        </p>
+
+    </div>
+
+
+    {% if selected_service %}
+
+        <div class="selected-service">
+
+            <span>Service sélectionné</span>
+
+            <strong>{{ selected_service.name }}</strong>
+
+        </div>
+
+    {% endif %}
+
+
+    <div class="form-card">
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+
+                <div class="form-field">
+
+                    {{ field.label_tag }}
+
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <div class="field-error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+
+            <button type="submit" class="btn">
+                Envoyer ma demande de devis
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <p class="form-note">
+        Votre demande est sans engagement. Les informations transmises
+        sont utilisées uniquement pour traiter votre demande.
+    </p>
+
+</section>
+
+{% endblock %}

@@ -6,61 +6,62 @@ from .forms import QuoteForm, ContactForm
 
 
 def home(request):
-    services = Service.objects.filter(
-        active=True
-    ).order_by('id')
-
-    return render(
-        request,
-        'home.html',
-        {
-            'services': services
-        }
-    )
+    services = Service.objects.filter(active=True)
+    return render(request, 'home.html', {'services': services})
 
 
 def quote(request):
-    form = QuoteForm(request.POST or None)
+    selected_service = None
+    service_id = request.GET.get('service')
 
-    if request.method == 'POST' and form.is_valid():
-        form.save()
+    if service_id:
+        selected_service = Service.objects.filter(
+            pk=service_id,
+            active=True
+        ).first()
 
-        messages.success(
-            request,
-            'Votre demande de devis a bien été envoyée.'
-        )
+    if request.method == 'POST':
+        form = QuoteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                'Votre demande de devis a bien été envoyée. Nous vous contacterons prochainement.'
+            )
+            return redirect('quote')
+    else:
+        initial = {}
 
-        return redirect('quote')
+        if selected_service:
+            initial['service'] = selected_service
+
+        form = QuoteForm(initial=initial)
 
     return render(
         request,
         'quote.html',
         {
-            'form': form
+            'form': form,
+            'selected_service': selected_service
         }
     )
 
 
 def contact(request):
-    form = ContactForm(request.POST or None)
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
 
-    if request.method == 'POST' and form.is_valid():
-        form.save()
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                'Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais.'
+            )
+            return redirect('contact')
+    else:
+        form = ContactForm()
 
-        messages.success(
-            request,
-            'Votre message a bien été envoyé.'
-        )
-
-        return redirect('contact')
-
-    return render(
-        request,
-        'contact.html',
-        {
-            'form': form
-        }
-    )
+    return render(request, 'contact.html', {'form': form})
 
 
 def detail(request, pk):
@@ -70,24 +71,8 @@ def detail(request, pk):
         active=True
     )
 
-    included_services = [
-        item.strip()
-        for item in service.included_services.splitlines()
-        if item.strip()
-    ]
-
-    benefits = [
-        item.strip()
-        for item in service.benefits.splitlines()
-        if item.strip()
-    ]
-
     return render(
         request,
         'service_detail.html',
-        {
-            'service': service,
-            'included_services': included_services,
-            'benefits': benefits,
-        }
+        {'service': service}
     )

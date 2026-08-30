@@ -1,80 +1,157 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Demander un devis | Shilo Multi-Services
-{% endblock %}
+{% block title %}Demander un devis | Shilo Multi-Services{% endblock %}
 
 {% block content %}
 
-<section class="form-page">
+<section class="quote-page">
 
-    <div class="form-header">
+    <div class="quote-header">
+        <a class="back-link" href="{% url 'home' %}#services">
+            ← Retour aux prestations
+        </a>
 
-        <p class="eyebrow">DEMANDE DE DEVIS</p>
+        <p class="eyebrow">DEVIS GRATUIT</p>
 
-        <h1>Obtenez votre devis personnalisé</h1>
+        <h1>Parlons de votre projet.</h1>
 
         <p>
-            Décrivez votre besoin. Notre équipe vous recontactera afin
-            de vous proposer une solution adaptée.
+            Décrivez-nous votre besoin et nous reviendrons vers vous
+            afin d'étudier votre demande.
         </p>
-
     </div>
 
+    <div class="quote-layout">
 
-    {% if selected_service %}
+        <div class="quote-form-card">
 
-        <div class="selected-service">
+            <div class="form-heading">
+                <h2>Votre demande</h2>
+                <p>
+                    Les informations ci-dessous nous permettront de
+                    mieux comprendre votre besoin.
+                </p>
+            </div>
 
-            <span>Service sélectionné</span>
+            <form method="post">
 
-            <strong>{{ selected_service.name }}</strong>
+                {% csrf_token %}
 
-        </div>
+                {% if form.non_field_errors %}
+                    <div class="form-errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
 
-    {% endif %}
+                <div class="form-grid">
 
+                    <div class="field">
+                        <label for="{{ form.name.id_for_label }}">
+                            Nom et prénom
+                        </label>
+                        {{ form.name }}
+                        {{ form.name.errors }}
+                    </div>
 
-    <div class="form-card">
+                    <div class="field">
+                        <label for="{{ form.email.id_for_label }}">
+                            Adresse e-mail
+                        </label>
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                    </div>
 
-        <form method="post">
+                    <div class="field">
+                        <label for="{{ form.phone.id_for_label }}">
+                            Numéro de téléphone
+                        </label>
+                        {{ form.phone }}
+                        {{ form.phone.errors }}
+                    </div>
 
-            {% csrf_token %}
+                    <div class="field">
+                        <label for="{{ form.service.id_for_label }}">
+                            Service souhaité
+                        </label>
+                        {{ form.service }}
+                        {{ form.service.errors }}
+                    </div>
 
-            {{ form.non_field_errors }}
+                    <div class="field field-full">
+                        <label for="{{ form.address.id_for_label }}">
+                            Adresse de l'intervention
+                        </label>
+                        {{ form.address }}
+                        {{ form.address.errors }}
+                    </div>
 
-            {% for field in form %}
+                    <div class="field">
+                        <label for="{{ form.preferred_date.id_for_label }}">
+                            Date souhaitée
+                        </label>
+                        {{ form.preferred_date }}
+                        {{ form.preferred_date.errors }}
+                    </div>
 
-                <div class="form-field">
-
-                    {{ field.label_tag }}
-
-                    {{ field }}
-
-                    {% if field.errors %}
-                        <div class="field-error">
-                            {{ field.errors }}
-                        </div>
-                    {% endif %}
+                    <div class="field field-full">
+                        <label for="{{ form.message.id_for_label }}">
+                            Décrivez votre besoin
+                        </label>
+                        {{ form.message }}
+                        {{ form.message.errors }}
+                    </div>
 
                 </div>
 
-            {% endfor %}
+                <div class="form-submit">
 
+                    <p>
+                        <strong>Votre demande est sans engagement.</strong><br>
+                        Nous vous contacterons pour échanger sur votre projet.
+                    </p>
 
-            <button type="submit" class="btn">
-                Envoyer ma demande de devis
-            </button>
+                    <button class="btn" type="submit">
+                        Envoyer ma demande →
+                    </button>
 
-        </form>
+                </div>
+
+            </form>
+
+        </div>
+
+        <aside class="quote-info">
+
+            <div class="quote-info-card">
+
+                <span class="quote-icon">✦</span>
+
+                <h2>Pourquoi demander un devis ?</h2>
+
+                <ul>
+                    <li>Une étude adaptée à votre besoin</li>
+                    <li>Une prestation personnalisée</li>
+                    <li>Un échange avec notre équipe</li>
+                    <li>Une réponse adaptée à votre situation</li>
+                </ul>
+
+            </div>
+
+            <div class="quote-contact-card">
+
+                <p class="eyebrow">UNE QUESTION ?</p>
+
+                <h3>Vous préférez nous contacter directement ?</h3>
+
+                <a href="{% url 'contact' %}">
+                    Nous contacter →
+                </a>
+
+            </div>
+
+        </aside>
 
     </div>
-
-
-    <p class="form-note">
-        Votre demande est sans engagement. Les informations transmises
-        sont utilisées uniquement pour traiter votre demande.
-    </p>
 
 </section>
 

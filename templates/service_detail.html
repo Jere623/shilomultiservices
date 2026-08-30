@@ -7,6 +7,9 @@
 <section class="service-page">
 
     <div class="service-header">
+        <a class="back-link" href="{% url 'home' %}#services">
+            ← Retour aux prestations
+        </a>
 
         <p class="eyebrow">NOS PRESTATIONS</p>
 
@@ -15,66 +18,61 @@
         <p class="service-intro">
             {{ service.short_description }}
         </p>
-
     </div>
 
+    <div class="service-content">
 
-    <div class="service-layout">
-
-        <main class="service-main">
-
-            <h2>Présentation de la prestation</h2>
-
-            <div class="service-description">
-                {{ service.description|linebreaks }}
-            </div>
-
-        </main>
-
+        <article class="service-description">
+            {{ service.description|linebreaks }}
+        </article>
 
         <aside class="service-sidebar">
 
-            <div class="service-card">
+            <div class="quote-card">
+                <span class="quote-icon">✦</span>
 
-                <p class="eyebrow">SHILO MULTI-SERVICES</p>
+                <h2>Un besoin particulier ?</h2>
 
-                <h3>Une prestation adaptée à vos besoins</h3>
+                <p>
+                    Chaque intervention est adaptée à vos besoins,
+                    à votre espace et à la nature de la prestation.
+                </p>
 
-                <ul>
-                    <li>Intervention professionnelle</li>
-                    <li>Service adapté à vos besoins</li>
-                    <li>Solutions pour particuliers et professionnels</li>
-                    <li>Accompagnement personnalisé</li>
-                </ul>
+                <a class="btn service-btn"
+                   href="{% url 'quote' %}?service={{ service.pk }}">
+                    Demander un devis
+                </a>
 
+                <a class="contact-link" href="{% url 'contact' %}">
+                    Nous contacter
+                </a>
             </div>
 
         </aside>
 
     </div>
 
-
-    <div class="service-cta">
+    <div class="service-bottom">
 
         <div>
-            <p class="eyebrow">VOUS AVEZ UN PROJET ?</p>
+            <p class="eyebrow">SHILO MULTI-SERVICES</p>
 
             <h2>
-                Parlons de votre besoin.
+                Une prestation adaptée à vos besoins.
             </h2>
-
-            <p>
-                Décrivez-nous votre projet et nous étudierons
-                votre demande afin de vous proposer une solution adaptée.
-            </p>
         </div>
 
-        <a
-            class="btn"
-            href="{% url 'quote' %}?service={{ service.pk }}"
-        >
-            Demander un devis
-        </a>
+        <div>
+            <p>
+                Nous privilégions la proximité, l'écoute et la qualité
+                du service afin de vous proposer une intervention
+                adaptée à votre situation.
+            </p>
+
+            <a class="btn" href="{% url 'quote' %}?service={{ service.pk }}">
+                Obtenir mon devis
+            </a>
+        </div>
 
     </div>
 

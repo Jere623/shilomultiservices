@@ -1,1 +1,118 @@
-{% extends 'base.html' %}{% block title %}Contact – Shilo Multi-Services{% endblock %}{% block content %}<section class="form"><p class="eyebrow">CONTACT</p><h1>Échangeons sur votre besoin</h1><form method="post">{% csrf_token %}{{form.as_p}}<button class="btn">Envoyer</button></form></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Contact | Shilo Multi-Services{% endblock %}
+
+{% block content %}
+
+<section class="contact-page">
+
+    <div class="contact-header">
+
+        <a class="back-link" href="{% url 'home' %}">
+            ← Retour à l'accueil
+        </a>
+
+        <p class="eyebrow">CONTACT</p>
+
+        <h1>Parlons de votre besoin.</h1>
+
+        <p>
+            Une question, une demande particulière ou besoin
+            d'informations ? Écrivez-nous.
+        </p>
+
+    </div>
+
+    <div class="contact-layout">
+
+        <div class="contact-form-card">
+
+            <h2>Envoyez-nous un message</h2>
+
+            <p class="form-description">
+                Remplissez le formulaire et notre équipe pourra
+                revenir vers vous.
+            </p>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="form-errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                {% for field in form %}
+
+                    <div class="field">
+
+                        {{ field.label_tag }}
+
+                        {{ field }}
+
+                        {% if field.errors %}
+                            <div class="field-errors">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+                <button type="submit" class="btn">
+                    Envoyer mon message →
+                </button>
+
+            </form>
+
+        </div>
+
+        <aside class="contact-info">
+
+            <div class="contact-info-card">
+
+                <p class="eyebrow">SHILO MULTI-SERVICES</p>
+
+                <h2>Une équipe à votre écoute.</h2>
+
+                <p>
+                    Nous vous accompagnons pour vos besoins de
+                    nettoyage, d'entretien et de multiservices.
+                </p>
+
+                <div class="contact-item">
+                    <strong>✉ E-mail</strong>
+                    <span>contact@shilomultiservices.com</span>
+                </div>
+
+                <div class="contact-item">
+                    <strong>📞 Téléphone</strong>
+                    <span>Contactez-nous pour échanger sur votre besoin.</span>
+                </div>
+
+            </div>
+
+            <div class="contact-quote">
+
+                <strong>Besoin d'un devis ?</strong>
+
+                <p>
+                    Décrivez directement votre projet.
+                </p>
+
+                <a href="{% url 'quote' %}">
+                    Demander un devis →
+                </a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+{% endblock %}

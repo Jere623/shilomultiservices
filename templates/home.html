@@ -1,10 +1,16 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}
 Shilo Multi-Services | Nettoyage et entretien professionnel
 {% endblock %}
 
+{% block description %}
+Shilo Multi-Services propose des prestations de nettoyage, entretien et multiservices pour particuliers et professionnels.
+{% endblock %}
+
+
 {% block content %}
+
 
 <section class="hero">
 
@@ -29,11 +35,13 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
 
         <div class="hero-actions">
 
-            <a class="btn" href="{% url 'quote' %}">
+            <a class="btn"
+               href="{% url 'quote' %}">
                 Demander un devis
             </a>
 
-            <a class="btn-outline" href="#services">
+            <a class="btn-outline"
+               href="#services">
                 Découvrir nos services
             </a>
 
@@ -69,7 +77,9 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
 </section>
 
 
-<section id="services" class="section services-section">
+
+<section id="services"
+         class="section services-section">
 
     <div class="section-heading">
 
@@ -116,6 +126,7 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
 
         </article>
 
+
         {% empty %}
 
         <article class="service-card-home">
@@ -138,7 +149,9 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
 </section>
 
 
-<section id="apropos" class="split">
+
+<section id="apropos"
+         class="split">
 
     <div>
 
@@ -151,6 +164,7 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
         </h2>
 
     </div>
+
 
     <div>
 
@@ -176,6 +190,7 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
     </div>
 
 </section>
+
 
 
 <section class="cta-section">
@@ -205,5 +220,6 @@ Shilo Multi-Services | Nettoyage et entretien professionnel
     </div>
 
 </section>
+
 
 {% endblock %}

@@ -1,147 +1,251 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Demander un devis | Shilo Multi-Services{% endblock %}
+{% block title %}
+Demander un devis | Shilo Multi-Services
+{% endblock %}
+
+{% block description %}
+Demandez un devis personnalisé auprès de Shilo Multi-Services pour vos besoins de nettoyage, entretien et multiservices.
+{% endblock %}
+
 
 {% block content %}
 
+
 <section class="quote-page">
 
+
     <div class="quote-header">
-        <a class="back-link" href="{% url 'home' %}#services">
+
+        <a
+            class="back-link"
+            href="{% url 'home' %}#services"
+        >
             ← Retour aux prestations
         </a>
 
-        <p class="eyebrow">DEVIS GRATUIT</p>
+        <p class="eyebrow">
+            DEMANDE DE DEVIS
+        </p>
 
-        <h1>Parlons de votre projet.</h1>
+        <h1>
+            Parlons de votre projet.
+        </h1>
 
         <p>
-            Décrivez-nous votre besoin et nous reviendrons vers vous
-            afin d'étudier votre demande.
+            Décrivez-nous votre besoin et nous vous
+            proposerons une solution adaptée à votre
+            situation.
         </p>
+
     </div>
+
+
 
     <div class="quote-layout">
 
+
         <div class="quote-form-card">
 
+
             <div class="form-heading">
-                <h2>Votre demande</h2>
+
+                <h2>
+                    Votre demande
+                </h2>
+
                 <p>
-                    Les informations ci-dessous nous permettront de
-                    mieux comprendre votre besoin.
+                    Les informations ci-dessous nous
+                    permettront de mieux comprendre
+                    votre besoin.
                 </p>
+
             </div>
+
 
             <form method="post">
 
                 {% csrf_token %}
 
+
                 {% if form.non_field_errors %}
+
                     <div class="form-errors">
                         {{ form.non_field_errors }}
                     </div>
+
                 {% endif %}
+
 
                 <div class="form-grid">
 
+
                     <div class="field">
+
                         <label for="{{ form.name.id_for_label }}">
                             Nom et prénom
                         </label>
+
                         {{ form.name }}
+
                         {{ form.name.errors }}
+
                     </div>
 
+
+
                     <div class="field">
+
                         <label for="{{ form.email.id_for_label }}">
                             Adresse e-mail
                         </label>
+
                         {{ form.email }}
+
                         {{ form.email.errors }}
+
                     </div>
 
+
+
                     <div class="field">
+
                         <label for="{{ form.phone.id_for_label }}">
                             Numéro de téléphone
                         </label>
+
                         {{ form.phone }}
+
                         {{ form.phone.errors }}
+
                     </div>
 
+
+
                     <div class="field">
+
                         <label for="{{ form.service.id_for_label }}">
                             Service souhaité
                         </label>
+
                         {{ form.service }}
+
                         {{ form.service.errors }}
+
                     </div>
 
+
+
                     <div class="field field-full">
+
                         <label for="{{ form.address.id_for_label }}">
                             Adresse de l'intervention
                         </label>
+
                         {{ form.address }}
+
                         {{ form.address.errors }}
+
                     </div>
 
+
+
                     <div class="field">
+
                         <label for="{{ form.preferred_date.id_for_label }}">
                             Date souhaitée
                         </label>
+
                         {{ form.preferred_date }}
+
                         {{ form.preferred_date.errors }}
+
                     </div>
 
+
+
                     <div class="field field-full">
+
                         <label for="{{ form.message.id_for_label }}">
                             Décrivez votre besoin
                         </label>
+
                         {{ form.message }}
+
                         {{ form.message.errors }}
+
                     </div>
 
+
                 </div>
+
+
 
                 <div class="form-submit">
 
                     <p>
-                        <strong>Votre demande est sans engagement.</strong><br>
-                        Nous vous contacterons pour échanger sur votre projet.
+                        Vos informations sont utilisées
+                        uniquement pour traiter votre demande.
                     </p>
 
-                    <button class="btn" type="submit">
-                        Envoyer ma demande →
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Envoyer ma demande
                     </button>
 
                 </div>
+
 
             </form>
 
         </div>
 
+
+
         <aside class="quote-info">
+
 
             <div class="quote-info-card">
 
-                <span class="quote-icon">✦</span>
+                <span class="quote-icon">
+                    ✦
+                </span>
 
-                <h2>Pourquoi demander un devis ?</h2>
+                <h2>
+                    Pourquoi nous contacter ?
+                </h2>
 
                 <ul>
-                    <li>Une étude adaptée à votre besoin</li>
-                    <li>Une prestation personnalisée</li>
-                    <li>Un échange avec notre équipe</li>
-                    <li>Une réponse adaptée à votre situation</li>
+
+                    <li>
+                        Une réponse adaptée à votre besoin
+                    </li>
+
+                    <li>
+                        Une intervention personnalisée
+                    </li>
+
+                    <li>
+                        Un accompagnement professionnel
+                    </li>
+
                 </ul>
 
             </div>
 
+
+
             <div class="quote-contact-card">
 
-                <p class="eyebrow">UNE QUESTION ?</p>
+                <p class="eyebrow">
+                    UNE QUESTION ?
+                </p>
 
-                <h3>Vous préférez nous contacter directement ?</h3>
+                <h3>
+                    Nous sommes à votre écoute.
+                </h3>
 
                 <a href="{% url 'contact' %}">
                     Nous contacter →
@@ -149,10 +253,14 @@
 
             </div>
 
+
         </aside>
+
 
     </div>
 
+
 </section>
+
 
 {% endblock %}

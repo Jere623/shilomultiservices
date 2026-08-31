@@ -7,11 +7,11 @@ from .forms import QuoteForm, ContactForm
 
 def home(request):
     services = Service.objects.filter(active=True)
-    return render(request, 'home.html', {'services': services})
+    return render(request, "home.html", {"services": services})
 
 
 def quote(request):
-    service_id = request.GET.get('service')
+    service_id = request.GET.get("service")
 
     initial = {}
 
@@ -21,7 +21,7 @@ def quote(request):
                 pk=service_id,
                 active=True
             )
-            initial['service'] = service
+            initial["service"] = service
         except Service.DoesNotExist:
             pass
 
@@ -30,36 +30,40 @@ def quote(request):
         initial=initial
     )
 
-    if request.method == 'POST' and form.is_valid():
+    if request.method == "POST" and form.is_valid():
         form.save()
+
         messages.success(
             request,
-            'Votre demande de devis a bien été envoyée.'
+            "Votre demande de devis a bien été envoyée."
         )
-        return redirect('quote')
+
+        return redirect("quote")
 
     return render(
         request,
-        'quote.html',
-        {'form': form}
+        "quote.html",
+        {"form": form}
     )
 
 
 def contact(request):
     form = ContactForm(request.POST or None)
 
-    if request.method == 'POST' and form.is_valid():
+    if request.method == "POST" and form.is_valid():
         form.save()
+
         messages.success(
             request,
-            'Votre message a bien été envoyé.'
+            "Votre message a bien été envoyé."
         )
-        return redirect('contact')
+
+        return redirect("contact")
 
     return render(
         request,
-        'contact.html',
-        {'form': form}
+        "contact.html",
+        {"form": form}
     )
 
 
@@ -72,6 +76,6 @@ def detail(request, pk):
 
     return render(
         request,
-        'service_detail.html',
-        {'service': service}
+        "service_detail.html",
+        {"service": service}
     )

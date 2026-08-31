@@ -1,7 +1,98 @@
 from django.contrib import admin
-from .models import Service,QuoteRequest,ContactMessage
-admin.site.register(Service)
+
+from .models import Service, QuoteRequest, ContactMessage
+
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'short_description',
+        'active',
+    )
+
+    list_filter = (
+        'active',
+    )
+
+    search_fields = (
+        'name',
+        'short_description',
+        'description',
+    )
+
+    ordering = (
+        'name',
+    )
+
+
 @admin.register(QuoteRequest)
-class QuoteAdmin(admin.ModelAdmin): list_display=('created_at','name','phone','service','status'); list_filter=('status','service'); search_fields=('name','email','phone')
+class QuoteRequestAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'name',
+        'email',
+        'phone',
+        'service',
+        'preferred_date',
+        'status',
+        'created_at',
+    )
+
+    list_filter = (
+        'status',
+        'service',
+        'created_at',
+    )
+
+    search_fields = (
+        'name',
+        'email',
+        'phone',
+        'address',
+        'message',
+    )
+
+    readonly_fields = (
+        'created_at',
+    )
+
+    ordering = (
+        '-created_at',
+    )
+
+    list_per_page = 25
+
+
 @admin.register(ContactMessage)
-class ContactAdmin(admin.ModelAdmin): list_display=('created_at','name','email','handled'); list_filter=('handled',); search_fields=('name','email')
+class ContactMessageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'name',
+        'email',
+        'phone',
+        'handled',
+        'created_at',
+    )
+
+    list_filter = (
+        'handled',
+        'created_at',
+    )
+
+    search_fields = (
+        'name',
+        'email',
+        'phone',
+        'message',
+    )
+
+    readonly_fields = (
+        'created_at',
+    )
+
+    ordering = (
+        '-created_at',
+    )
+
+    list_per_page = 25

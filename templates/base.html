@@ -1,39 +1,57 @@
 {% load static %}
 
-#meta name="description" content="{% block description %}Shilo Multi-Services – nettoyage et entretien professionnel{% endblock %}">
-
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Shilo Multi-Services{% endblock %}</title>
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>
+        {% block title %}
+            Shilo Multi-Services
+        {% endblock %}
+    </title>
 
     <meta name="description"
-          content="{% block description %}Shilo Multi-Services – nettoyage et entretien professionnel{% endblock %}">
+          content="{% block description %}Shilo Multi-Services – nettoyage, entretien et multiservices professionnels.{% endblock %}">
 
     <meta name="theme-color" content="#176b4d">
 
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'css/site.css' %}">
+
 </head>
 
+
 <body>
+
 
 <header class="site-header">
 
     <div class="header-container">
 
-        <a class="logo" href="{% url 'home' %}" aria-label="Shilo Multi-Services - Accueil">
+        <a class="logo"
+           href="{% url 'home' %}"
+           aria-label="Shilo Multi-Services - Accueil">
+
             <img
                 src="{% static 'images/logo-shilo.png' %}"
                 alt="Shilo Multi-Services"
             >
+
         </a>
 
-        <nav class="main-nav" aria-label="Navigation principale">
 
-            <a href="{% url 'home' %}">Accueil</a>
+        <nav class="main-nav"
+             aria-label="Navigation principale">
+
+            <a href="{% url 'home' %}">
+                Accueil
+            </a>
 
             <a href="{% url 'home' %}#services">
                 Services
@@ -47,7 +65,8 @@
                 Contact
             </a>
 
-            <a class="btn small" href="{% url 'quote' %}">
+            <a class="btn small"
+               href="{% url 'quote' %}">
                 Demander un devis
             </a>
 
@@ -59,29 +78,34 @@
 
 
 {% if messages %}
-    <div class="flash-container">
 
-        {% for message in messages %}
+<div class="flash-container">
 
-            <div class="flash">
-                {{ message }}
-            </div>
+    {% for message in messages %}
 
-        {% endfor %}
+        <div class="flash">
+            {{ message }}
+        </div>
 
-    </div>
+    {% endfor %}
+
+</div>
+
 {% endif %}
 
 
 <main>
+
     {% block content %}
     {% endblock %}
+
 </main>
 
 
 <footer class="site-footer">
 
     <div class="footer-container">
+
 
         <div class="footer-brand">
 
@@ -132,7 +156,11 @@
                 contact@shilomultiservices.com
             </a>
 
-            <a href="https://wa.me/33667800455" target="_blank" rel="noopener">
+            <a
+                href="https://wa.me/33667800455"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 WhatsApp
             </a>
 
@@ -148,7 +176,7 @@
     <div class="footer-bottom">
 
         <span>
-            © {% now 'Y' %} Shilo Multi-Services
+            © {% now "Y" %} Shilo Multi-Services
         </span>
 
         <span>
@@ -158,6 +186,7 @@
     </div>
 
 </footer>
+
 
 </body>
 </html>

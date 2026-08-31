@@ -1,5 +1,7 @@
 {% load static %}
 
+#meta name="description" content="{% block description %}Shilo Multi-Services – nettoyage et entretien professionnel{% endblock %}">
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -9,7 +11,7 @@
     <title>{% block title %}Shilo Multi-Services{% endblock %}</title>
 
     <meta name="description"
-          content="Shilo Multi-Services - Nettoyage, entretien et services professionnels pour particuliers, entreprises et collectivités.">
+          content="{% block description %}Shilo Multi-Services – nettoyage et entretien professionnel{% endblock %}">
 
     <meta name="theme-color" content="#176b4d">
 

@@ -1,48 +1,67 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Contact | Shilo Multi-Services{% endblock %}
+{% block title %}
+Contact | Shilo Multi-Services
+{% endblock %}
+
+{% block description %}
+Contactez Shilo Multi-Services pour toute question concernant nos prestations de nettoyage, entretien et multiservices.
+{% endblock %}
+
 
 {% block content %}
 
+
 <section class="contact-page">
+
 
     <div class="contact-header">
 
-        <a class="back-link" href="{% url 'home' %}">
-            ← Retour à l'accueil
-        </a>
+        <p class="eyebrow">
+            CONTACT
+        </p>
 
-        <p class="eyebrow">CONTACT</p>
-
-        <h1>Parlons de votre besoin.</h1>
+        <h1>
+            Parlons ensemble.
+        </h1>
 
         <p>
-            Une question, une demande particulière ou besoin
-            d'informations ? Écrivez-nous.
+            Une question, un besoin particulier ou un
+            projet ? Notre équipe est à votre écoute.
         </p>
 
     </div>
 
+
+
     <div class="contact-layout">
+
 
         <div class="contact-form-card">
 
-            <h2>Envoyez-nous un message</h2>
+            <h2>
+                Envoyez-nous un message
+            </h2>
 
             <p class="form-description">
-                Remplissez le formulaire et notre équipe pourra
-                revenir vers vous.
+                Remplissez le formulaire ci-dessous et
+                nous vous répondrons dès que possible.
             </p>
+
 
             <form method="post">
 
                 {% csrf_token %}
 
+
                 {% if form.non_field_errors %}
+
                     <div class="form-errors">
                         {{ form.non_field_errors }}
                     </div>
+
                 {% endif %}
+
 
                 {% for field in form %}
 
@@ -52,55 +71,101 @@
 
                         {{ field }}
 
-                        {% if field.errors %}
-                            <div class="field-errors">
-                                {{ field.errors }}
-                            </div>
-                        {% endif %}
+                        {{ field.errors }}
 
                     </div>
 
                 {% endfor %}
 
-                <button type="submit" class="btn">
-                    Envoyer mon message →
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Envoyer le message
                 </button>
 
             </form>
 
         </div>
 
+
+
         <aside class="contact-info">
+
 
             <div class="contact-info-card">
 
-                <p class="eyebrow">SHILO MULTI-SERVICES</p>
-
-                <h2>Une équipe à votre écoute.</h2>
-
-                <p>
-                    Nous vous accompagnons pour vos besoins de
-                    nettoyage, d'entretien et de multiservices.
+                <p class="eyebrow">
+                    SHILO MULTI-SERVICES
                 </p>
 
-                <div class="contact-item">
-                    <strong>✉ E-mail</strong>
-                    <span>contact@shilomultiservices.com</span>
-                </div>
+                <h2>
+                    Nous sommes à votre écoute.
+                </h2>
+
+                <p>
+                    Pour toute demande d'information,
+                    contactez-nous directement.
+                </p>
+
 
                 <div class="contact-item">
-                    <strong>📞 Téléphone</strong>
-                    <span>Contactez-nous pour échanger sur votre besoin.</span>
+
+                    <span>
+                        Téléphone
+                    </span>
+
+                    <a href="tel:+33667800455">
+                        06 67 80 04 55
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        E-mail
+                    </span>
+
+                    <a href="mailto:contact@shilomultiservices.com">
+                        contact@shilomultiservices.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        WhatsApp
+                    </span>
+
+                    <a
+                        href="https://wa.me/33667800455"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Nous écrire sur WhatsApp
+                    </a>
+
                 </div>
 
             </div>
 
+
+
             <div class="contact-quote">
 
-                <strong>Besoin d'un devis ?</strong>
+                <p class="eyebrow">
+                    BESOIN D'UN DEVIS ?
+                </p>
 
                 <p>
-                    Décrivez directement votre projet.
+                    Pour obtenir une estimation adaptée
+                    à votre besoin, vous pouvez directement
+                    effectuer une demande de devis.
                 </p>
 
                 <a href="{% url 'quote' %}">
@@ -109,10 +174,14 @@
 
             </div>
 
+
         </aside>
+
 
     </div>
 
+
 </section>
+
 
 {% endblock %}

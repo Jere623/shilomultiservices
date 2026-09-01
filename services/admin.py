@@ -5,24 +5,25 @@ from .models import Service, QuoteRequest, ContactMessage
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
+
     list_display = (
-        'name',
-        'short_description',
-        'active',
+        "id",
+        "name",
+        "active",
     )
 
     list_filter = (
-        'active',
+        "active",
     )
 
     search_fields = (
-        'name',
-        'short_description',
-        'description',
+        "name",
+        "short_description",
+        "description",
     )
 
     ordering = (
-        'name',
+        "id",
     )
 
 
@@ -30,69 +31,63 @@ class ServiceAdmin(admin.ModelAdmin):
 class QuoteRequestAdmin(admin.ModelAdmin):
 
     list_display = (
-        'name',
-        'email',
-        'phone',
-        'service',
-        'preferred_date',
-        'status',
-        'created_at',
+        "id",
+        "name",
+        "email",
+        "phone",
+        "service",
+        "preferred_date",
     )
 
     list_filter = (
-        'status',
-        'service',
-        'created_at',
+        "service",
+        "preferred_date",
     )
 
     search_fields = (
-        'name',
-        'email',
-        'phone',
-        'address',
-        'message',
+        "name",
+        "email",
+        "phone",
+        "address",
+        "message",
     )
 
     readonly_fields = (
-        'created_at',
+        "name",
+        "email",
+        "phone",
+        "service",
+        "address",
+        "preferred_date",
+        "message",
     )
 
     ordering = (
-        '-created_at',
+        "-id",
     )
-
-    list_per_page = 25
 
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
 
     list_display = (
-        'name',
-        'email',
-        'phone',
-        'handled',
-        'created_at',
-    )
-
-    list_filter = (
-        'handled',
-        'created_at',
+        "id",
+        "name",
+        "email",
     )
 
     search_fields = (
-        'name',
-        'email',
-        'phone',
-        'message',
+        "name",
+        "email",
+        "message",
     )
 
     readonly_fields = (
-        'created_at',
+        "name",
+        "email",
+        "message",
     )
 
     ordering = (
-        '-created_at',
+        "-id",
     )
-
-    list_per_page = 25

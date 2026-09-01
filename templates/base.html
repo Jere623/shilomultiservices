@@ -2,36 +2,79 @@
 
 <!doctype html>
 <html lang="fr">
+
 <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Shilo Multi-Services{% endblock %}</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
 
-    <meta name="description"
-          content="Shilo Multi-Services - Nettoyage, entretien et services professionnels pour particuliers, entreprises et collectivités.">
+    <title>
+        {% block title %}
+        Shilo Multi-Services | Nettoyage et entretien professionnel
+        {% endblock %}
+    </title>
 
-    <meta name="theme-color" content="#176b4d">
+    <meta
+        name="description"
+        content="{% block description %}Shilo Multi-Services propose des prestations de nettoyage, entretien et multiservices pour particuliers et professionnels.{% endblock %}"
+    >
 
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    <meta
+        name="theme-color"
+        content="#176b4d"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <link
+        rel="canonical"
+        href="https://shilomultiservices.com{{ request.path }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/site.css' %}"
+    >
+
 </head>
 
+
 <body>
+
 
 <header class="site-header">
 
     <div class="header-container">
 
-        <a class="logo" href="{% url 'home' %}" aria-label="Shilo Multi-Services - Accueil">
+        <a
+            class="logo"
+            href="{% url 'home' %}"
+            aria-label="Shilo Multi-Services - Accueil"
+        >
+
             <img
                 src="{% static 'images/logo-shilo.png' %}"
                 alt="Shilo Multi-Services"
             >
+
         </a>
 
-        <nav class="main-nav" aria-label="Navigation principale">
 
-            <a href="{% url 'home' %}">Accueil</a>
+        <nav
+            class="main-nav"
+            aria-label="Navigation principale"
+        >
+
+            <a href="{% url 'home' %}">
+                Accueil
+            </a>
 
             <a href="{% url 'home' %}#services">
                 Services
@@ -45,7 +88,10 @@
                 Contact
             </a>
 
-            <a class="btn small" href="{% url 'quote' %}">
+            <a
+                class="btn small"
+                href="{% url 'quote' %}"
+            >
                 Demander un devis
             </a>
 
@@ -57,29 +103,34 @@
 
 
 {% if messages %}
-    <div class="flash-container">
 
-        {% for message in messages %}
+<div class="flash-container">
 
-            <div class="flash">
-                {{ message }}
-            </div>
+    {% for message in messages %}
 
-        {% endfor %}
+        <div class="flash">
+            {{ message }}
+        </div>
 
-    </div>
+    {% endfor %}
+
+</div>
+
 {% endif %}
 
 
 <main>
+
     {% block content %}
     {% endblock %}
+
 </main>
 
 
 <footer class="site-footer">
 
     <div class="footer-container">
+
 
         <div class="footer-brand">
 
@@ -97,7 +148,9 @@
 
         <div class="footer-links">
 
-            <h3>Navigation</h3>
+            <h3>
+                Navigation
+            </h3>
 
             <a href="{% url 'home' %}">
                 Accueil
@@ -120,7 +173,9 @@
 
         <div class="footer-contact">
 
-            <h3>Contact</h3>
+            <h3>
+                Contact
+            </h3>
 
             <a href="tel:+33667800455">
                 06 67 80 04 55
@@ -130,7 +185,11 @@
                 contact@shilomultiservices.com
             </a>
 
-            <a href="https://wa.me/33667800455" target="_blank" rel="noopener">
+            <a
+                href="https://wa.me/33667800455"
+                target="_blank"
+                rel="noopener"
+            >
                 WhatsApp
             </a>
 
@@ -157,5 +216,7 @@
 
 </footer>
 
+
 </body>
+
 </html>

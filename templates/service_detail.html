@@ -1,1 +1,141 @@
-{% extends 'base.html' %}{% block content %}<section class="form"><p class="eyebrow">PRESTATION</p><h1>{{service.name}}</h1><p>{{service.description|linebreaks}}</p><a class="btn" href="{% url 'quote' %}">Demander un devis</a></section>{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}
+{{ service.name }} | Shilo Multi-Services
+{% endblock %}
+
+{% block description %}
+{{ service.short_description }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="service-page">
+
+
+    <div class="service-header">
+
+        <a
+            class="back-link"
+            href="{% url 'home' %}#services"
+        >
+            ← Retour aux prestations
+        </a>
+
+        <p class="eyebrow">
+            NOS PRESTATIONS
+        </p>
+
+        <h1>
+            {{ service.name }}
+        </h1>
+
+        <p class="service-intro">
+            {{ service.short_description }}
+        </p>
+
+    </div>
+
+
+
+    <div class="service-content">
+
+
+        <article class="service-description">
+
+            <p class="service-label">
+                PRÉSENTATION
+            </p>
+
+            {{ service.description|linebreaks }}
+
+        </article>
+
+
+
+        <aside class="service-sidebar">
+
+            <div class="quote-card">
+
+                <span class="quote-icon">
+                    ✦
+                </span>
+
+                <p class="service-label">
+                    SHILO MULTI-SERVICES
+                </p>
+
+                <h2>
+                    Une intervention adaptée
+                </h2>
+
+                <p>
+                    Nous adaptons notre intervention à votre
+                    espace, à vos besoins et à la nature de
+                    la prestation demandée.
+                </p>
+
+                <div class="service-contact-info">
+
+                    <strong>
+                        Besoin d'un devis ?
+                    </strong>
+
+                    <p>
+                        Décrivez-nous votre projet afin que
+                        nous puissions vous proposer une
+                        réponse adaptée.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+
+    <div class="service-bottom">
+
+        <div>
+
+            <p class="eyebrow">
+                VOTRE PROJET
+            </p>
+
+            <h2>
+                Parlons de votre besoin.
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                Vous souhaitez bénéficier de cette
+                prestation ? Envoyez-nous votre demande
+                et nous vous répondrons dans les meilleurs
+                délais.
+            </p>
+
+            <a
+                class="btn"
+                href="{% url 'quote' %}?service={{ service.pk }}"
+            >
+                Demander un devis
+            </a>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+{% endblock %}

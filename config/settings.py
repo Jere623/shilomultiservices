@@ -15,16 +15,35 @@ DEBUG = os.environ.get(
 ).lower() == "true"
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "shilomultiservices.com",
-    "www.shilomultiservices.com",
+    'localhost',
+    '127.0.0.1',
+    'shilomultiservices.com',
+    'www.shilomultiservices.com',
 ]
 
-if os.environ.get("RENDER_EXTERNAL_HOSTNAME"):
+if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
     ALLOWED_HOSTS.append(
-        os.environ["RENDER_EXTERNAL_HOSTNAME"]
+        os.environ['RENDER_EXTERNAL_HOSTNAME']
     )
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://shilomultiservices.com',
+    'https://www.shilomultiservices.com',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = (
+    os.environ.get('SECURE_SSL_REDIRECT', 'False').lower() == 'true'
+)
+
+SESSION_COOKIE_SECURE = (
+    os.environ.get('SESSION_COOKIE_SECURE', 'False').lower() == 'true'
+)
+
+CSRF_COOKIE_SECURE = (
+    os.environ.get('CSRF_COOKIE_SECURE', 'False').lower() == 'true'
+)
 
 INSTALLED_APPS = [
     'django.contrib.admin',

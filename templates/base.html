@@ -12,12 +12,12 @@
 
     <title>
         {% block title %}
-        Shilo Multi-Services | Soutien scolaire à Clermont-Ferrand
+            Shilo Multi-Services
         {% endblock %}
     </title>
 
     <meta name="description"
-          content="{% block description %}Soutien scolaire, aide aux devoirs et remise à niveau à Clermont-Ferrand et alentours. Cours personnalisés du primaire au lycée.{% endblock %}">
+          content="{% block description %}Shilo Multi-Services – nettoyage, entretien et multiservices professionnels.{% endblock %}">
 
     <meta name="theme-color" content="#176b4d">
 
@@ -29,6 +29,7 @@
 
 <body>
 
+
 <header class="site-header">
 
     <div class="header-container">
@@ -37,8 +38,10 @@
            href="{% url 'home' %}"
            aria-label="Shilo Multi-Services - Accueil">
 
-            <img src="{% static 'images/logo-shilo.png' %}"
-                 alt="Shilo Multi-Services">
+            <img
+                src="{% static 'images/logo-shilo.png' %}"
+                alt="Shilo Multi-Services"
+            >
 
         </a>
 
@@ -50,16 +53,12 @@
                 Accueil
             </a>
 
-            <a href="{% url 'home' %}#matieres">
-                Matières
+            <a href="{% url 'home' %}#services">
+                Services
             </a>
 
-            <a href="{% url 'home' %}#atouts">
-                Nos atouts
-            </a>
-
-            <a href="{% url 'home' %}#formules">
-                Nos formules
+            <a href="{% url 'home' %}#apropos">
+                À propos
             </a>
 
             <a href="{% url 'contact' %}">
@@ -108,48 +107,34 @@
     <div class="footer-container">
 
 
-        <!-- MARQUE -->
-
         <div class="footer-brand">
 
-            <img src="{% static 'images/logo-shilo.png' %}"
-                 alt="Shilo Multi-Services">
+            <img
+                src="{% static 'images/logo-shilo.png' %}"
+                alt="Shilo Multi-Services"
+            >
 
             <p>
-                Soutien scolaire, aide aux devoirs
-                et remise à niveau.
-            </p>
-
-            <p>
-                Du primaire au lycée,
-                à Clermont-Ferrand et alentours.
+                Nettoyage, entretien et services professionnels.
             </p>
 
         </div>
 
 
-        <!-- NAVIGATION -->
-
         <div class="footer-links">
 
-            <h3>
-                Navigation
-            </h3>
+            <h3>Navigation</h3>
 
             <a href="{% url 'home' %}">
                 Accueil
             </a>
 
-            <a href="{% url 'home' %}#matieres">
-                Matières
+            <a href="{% url 'home' %}#services">
+                Services
             </a>
 
-            <a href="{% url 'home' %}#atouts">
-                Nos atouts
-            </a>
-
-            <a href="{% url 'home' %}#formules">
-                Nos formules
+            <a href="{% url 'home' %}#apropos">
+                À propos
             </a>
 
             <a href="{% url 'contact' %}">
@@ -159,31 +144,25 @@
         </div>
 
 
-        <!-- CONTACT -->
-
         <div class="footer-contact">
 
-            <h3>
-                Nous contacter
-            </h3>
+            <h3>Contact</h3>
 
-            <a href="tel:+33668701404">
-                06 68 70 14 04
+            <a href="tel:+33667800455">
+                06 67 80 04 55
             </a>
 
-            <a href="mailto:contact@shilo-multi-services.com">
-                contact@shilo-multi-services.com
+            <a href="mailto:contact@shilomultiservices.com">
+                contact@shilomultiservices.com
             </a>
 
-            <a href="https://shilomultiservices.com"
-               target="_blank"
-               rel="noopener">
-                www.shilomultiservices.com
+            <a
+                href="https://wa.me/33667800455"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
             </a>
-
-            <p>
-                Clermont-Ferrand et alentours
-            </p>
 
             <a href="{% url 'quote' %}">
                 Demander un devis
@@ -197,7 +176,7 @@
     <div class="footer-bottom">
 
         <span>
-            © {% now 'Y' %} Shilo Multi-Services
+            © {% now "Y" %} Shilo Multi-Services
         </span>
 
         <span>
@@ -210,5 +189,4 @@
 
 
 </body>
-
 </html>

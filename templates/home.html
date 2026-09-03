@@ -1,440 +1,30 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Soutien scolaire à Clermont-Ferrand | Shilo Multi-Services
-{% endblock %}
-
-{% block description %}
-Soutien scolaire, aide aux devoirs et remise à niveau à Clermont-Ferrand et alentours. Cours personnalisés du primaire au lycée, en ligne ou à domicile.
+Shilo Multi-Services | Nettoyage et entretien professionnel
 {% endblock %}
 
 {% block content %}
 
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
+
     <div class="hero-content">
 
-        <p class="eyebrow">SHILO MULTI-SERVICES · SOUTIEN SCOLAIRE</p>
+        <p class="eyebrow">
+            NETTOYAGE · ENTRETIEN · MULTISERVICES
+        </p>
 
         <h1>
-            Ensemble, révélons
+            Un environnement propre.
             <br>
-            <em>votre potentiel.</em>
+            <em>Un service de confiance.</em>
         </h1>
 
         <p>
-            <strong>Aide aux devoirs et remise à niveau</strong>
-            pour accompagner chaque élève vers plus de confiance,
-            de méthode et de réussite.
-        </p>
-
-        <p>
-            Nous accompagnons les élèves du <strong>primaire au lycée</strong>
-            à Clermont-Ferrand et alentours, avec des cours adaptés
-            à leur niveau, à leurs besoins et aux programmes scolaires.
-        </p>
-
-        <div class="hero-actions">
-            <a class="btn" href="{% url 'quote' %}">
-                Demander un accompagnement
-            </a>
-
-            <a class="btn-outline" href="#matieres">
-                Découvrir nos matières
-            </a>
-        </div>
-
-    </div>
-
-    <div class="panel">
-
-        <div class="panel-icon">✓</div>
-
-        <p class="eyebrow">NOTRE ENGAGEMENT</p>
-
-        <h2>
-            Un accompagnement
-            <br>
-            <em>personnalisé</em>
-        </h2>
-
-        <p>
-            Chaque élève est unique. Nous commençons par identifier
-            ses besoins afin de construire un accompagnement
-            réellement adapté.
-        </p>
-
-        <div class="panel-line"></div>
-
-        <strong>
-            Progresser · Comprendre · Réussir
-        </strong>
-
-    </div>
-</section>
-
-
-<!-- =========================
-     PRÉSENTATION
-========================= -->
-
-<section class="section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">SOUTIEN SCOLAIRE</p>
-
-        <h2>
-            Aide aux devoirs et
-            remise à niveau
-        </h2>
-
-        <p>
-            Nous aidons les élèves à mieux comprendre leurs cours,
-            à acquérir de bonnes méthodes de travail et à progresser
-            durablement dans leur scolarité.
-        </p>
-
-    </div>
-
-    <div class="grid">
-
-        <article class="service-card-home">
-
-            <div class="service-number">01</div>
-
-            <h3>Évaluation des besoins</h3>
-
-            <p>
-                Un premier échange permet d'identifier les difficultés,
-                les objectifs et les besoins spécifiques de chaque élève.
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <div class="service-number">02</div>
-
-            <h3>Programme sur-mesure</h3>
-
-            <p>
-                Nous adaptons les contenus, les exercices et le rythme
-                de travail au niveau et aux objectifs de l'élève.
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <div class="service-number">03</div>
-
-            <h3>Suivi régulier</h3>
-
-            <p>
-                Un accompagnement régulier permet de mesurer les progrès,
-                renforcer les acquis et travailler les difficultés.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MATIÈRES
-========================= -->
-
-<section id="matieres" class="section services-section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">MATIÈRES PROPOSÉES</p>
-
-        <h2>
-            Les matières essentielles
-            pour progresser
-        </h2>
-
-        <p>
-            Des contenus adaptés à chaque niveau et aux programmes
-            officiels, du primaire au lycée.
-        </p>
-
-    </div>
-
-
-    <div class="grid">
-
-        <article class="service-card-home">
-            <div class="service-number">01</div>
-            <h3>Mathématiques</h3>
-            <p>
-                Comprendre les notions, résoudre les exercices
-                et consolider les bases.
-            </p>
-        </article>
-
-
-        <article class="service-card-home">
-            <div class="service-number">02</div>
-            <h3>Français</h3>
-            <p>
-                Lecture, grammaire, conjugaison, expression écrite
-                et compréhension.
-            </p>
-        </article>
-
-
-        <article class="service-card-home">
-            <div class="service-number">03</div>
-            <h3>Anglais</h3>
-            <p>
-                Compréhension, vocabulaire, expression et consolidation
-                des bases en anglais.
-            </p>
-        </article>
-
-
-        <article class="service-card-home">
-            <div class="service-number">04</div>
-            <h3>Histoire-Géographie</h3>
-            <p>
-                Méthodologie, compréhension des cours et préparation
-                aux évaluations.
-            </p>
-        </article>
-
-
-        <article class="service-card-home">
-            <div class="service-number">05</div>
-            <h3>Physique-Chimie</h3>
-            <p>
-                Explication des notions, exercices et préparation
-                aux contrôles et examens.
-            </p>
-        </article>
-
-
-        <article class="service-card-home">
-            <div class="service-number">06</div>
-            <h3>Initiation informatique</h3>
-            <p>
-                Découverte de l'informatique, outils numériques
-                et acquisition des premières compétences.
-            </p>
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     NOS ATOUTS
-========================= -->
-
-<section class="split">
-
-    <div>
-
-        <p class="eyebrow">NOS ATOUTS</p>
-
-        <h2>
-            Une pédagogie adaptée
-            à chaque élève.
-        </h2>
-
-        <p>
-            Notre objectif est de créer un cadre de travail
-            rassurant et motivant afin que chaque élève puisse
-            progresser à son rythme.
-        </p>
-
-    </div>
-
-
-    <div class="grid">
-
-        <article class="service-card-home">
-
-            <h3>🎓 Enseignants expérimentés</h3>
-
-            <p>
-                Des enseignants pédagogues et à l'écoute
-                des besoins des élèves.
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <h3>📚 Programmes sur-mesure</h3>
-
-            <p>
-                Des séances adaptées au niveau, aux difficultés
-                et aux objectifs de chaque élève.
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <h3>⏰ Horaires flexibles</h3>
-
-            <p>
-                Des créneaux organisés selon les disponibilités
-                de l'élève et de sa famille.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MODES DE COURS
-========================= -->
-
-<section class="section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">NOS FORMULES</p>
-
-        <h2>
-            Choisissez le format
-            qui vous convient
-        </h2>
-
-    </div>
-
-
-    <div class="grid">
-
-        <article class="service-card-home">
-
-            <div class="service-number">01</div>
-
-            <h3>Cours en ligne</h3>
-
-            <p>
-                Profitez de la flexibilité des cours depuis chez vous,
-                avec un accompagnement à distance personnalisé.
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <div class="service-number">02</div>
-
-            <h3>Suivi particulier</h3>
-
-            <p>
-                Un accompagnement individuel et adapté aux besoins
-                spécifiques de votre enfant.
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <div class="service-number">03</div>
-
-            <h3>Cours en petit groupe</h3>
-
-            <p>
-                Travaillez ensemble, échangez et progressez efficacement
-                dans un environnement stimulant.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     NOTRE MÉTHODE
-========================= -->
-
-<section class="split">
-
-    <div>
-
-        <p class="eyebrow">NOTRE MÉTHODE</p>
-
-        <h2>
-            Un suivi pensé pour
-            faire progresser chaque élève.
-        </h2>
-
-    </div>
-
-
-    <div>
-
-        <p>
-            Nos suivis commencent par une <strong>évaluation</strong>
-            afin de cibler les besoins de chaque élève.
-        </p>
-
-        <p>
-            Nous proposons ensuite un
-            <strong>programme sur-mesure</strong>, accompagné
-            d'un suivi régulier permettant d'observer les progrès
-            et d'ajuster les séances.
-        </p>
-
-        <p>
-            Grâce à des méthodes efficaces, des enseignants
-            expérimentés et des horaires flexibles, nous aidons
-            chaque élève à reprendre confiance et à progresser
-            durablement.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     TARIF
-========================= -->
-
-<section class="cta-section">
-
-    <div>
-
-        <p class="eyebrow">SOUTIEN SCOLAIRE</p>
-
-        <h2>
-            Un accompagnement
-            accessible et personnalisé.
-        </h2>
-
-        <p>
-            <strong>À partir de 15 €</strong>
-        </p>
-
-        <p>
-            Contactez-nous pour connaître les formules disponibles
-            et obtenir une proposition adaptée à vos besoins.
+            Shilo Multi-Services vous accompagne dans
+            l'entretien, le nettoyage et la remise en état
+            de vos espaces, pour les particuliers comme
+            pour les professionnels.
         </p>
 
         <div class="hero-actions">
@@ -443,35 +33,59 @@ Soutien scolaire, aide aux devoirs et remise à niveau à Clermont-Ferrand et al
                 Demander un devis
             </a>
 
-            <a class="btn-outline" href="{% url 'contact' %}">
-                Nous contacter
+            <a class="btn-outline" href="#services">
+                Découvrir nos services
             </a>
 
         </div>
 
     </div>
 
-</section>
 
+    <div class="panel">
 
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">NOUS CONTACTER</p>
+        <div class="panel-icon">
+            ✓
+        </div>
 
         <h2>
-            Besoin d'un accompagnement
-            pour votre enfant ?
+            Qualité & sérénité
         </h2>
 
         <p>
-            Nous sommes disponibles à Clermont-Ferrand et alentours
-            pour échanger sur les besoins de votre enfant.
+            Une organisation professionnelle,
+            une écoute attentive et des solutions
+            adaptées à chaque besoin.
+        </p>
+
+        <div class="panel-line"></div>
+
+        <strong>
+            Un service pensé pour vous.
+        </strong>
+
+    </div>
+
+</section>
+
+
+
+<section id="services"
+         class="section services-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            NOS PRESTATIONS
+        </p>
+
+        <h2>
+            Des solutions pour chaque espace
+        </h2>
+
+        <p>
+            Découvrez nos différentes prestations
+            de nettoyage, d'entretien et de multiservices.
         </p>
 
     </div>
@@ -479,76 +93,113 @@ Soutien scolaire, aide aux devoirs et remise à niveau à Clermont-Ferrand et al
 
     <div class="grid">
 
+        {% for service in services %}
+
         <article class="service-card-home">
 
-            <div class="service-number">☎</div>
+            <div class="service-number">
+                {{ forloop.counter|stringformat:"02d" }}
+            </div>
 
-            <h3>Téléphone</h3>
+            <h3>
+                {{ service.name }}
+            </h3>
 
             <p>
-                <a href="tel:+33668701404">
-                    06 68 70 14 04
-                </a>
+                {{ service.short_description }}
+            </p>
+
+            <a href="{% url 'detail' service.pk %}"
+               class="service-link">
+
+                En savoir plus →
+
+            </a>
+
+        </article>
+
+        {% empty %}
+
+        <article class="service-card-home">
+
+            <h3>
+                Nos prestations arrivent bientôt
+            </h3>
+
+            <p>
+                Les services de Shilo Multi-Services
+                seront prochainement disponibles.
             </p>
 
         </article>
 
-
-        <article class="service-card-home">
-
-            <div class="service-number">@</div>
-
-            <h3>Email</h3>
-
-            <p>
-                <a href="mailto:contact@shilo-multi-services.com">
-                    contact@shilo-multi-services.com
-                </a>
-            </p>
-
-        </article>
-
-
-        <article class="service-card-home">
-
-            <div class="service-number">⌖</div>
-
-            <h3>Secteur</h3>
-
-            <p>
-                Clermont-Ferrand et alentours
-            </p>
-
-        </article>
+        {% endfor %}
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     CTA FINAL
-========================= -->
+
+<section id="apropos"
+         class="split">
+
+    <div>
+
+        <p class="eyebrow">
+            POURQUOI SHILO ?
+        </p>
+
+        <h2>
+            Professionnalisme, proximité et efficacité.
+        </h2>
+
+    </div>
+
+
+    <div>
+
+        <p>
+            Nous mettons notre savoir-faire au service
+            des particuliers, des entreprises et des
+            collectivités afin de proposer des solutions
+            adaptées à chaque environnement.
+        </p>
+
+        <p>
+            Notre priorité : vous offrir un service sérieux,
+            flexible et adapté à vos besoins.
+        </p>
+
+        <a class="btn" href="{% url 'contact' %}">
+            Nous contacter
+        </a>
+
+    </div>
+
+</section>
+
+
 
 <section class="cta-section">
 
     <div>
 
-        <p class="eyebrow">SHILO MULTI SERVICES</p>
+        <p class="eyebrow">
+            BESOIN D'UNE INTERVENTION ?
+        </p>
 
         <h2>
-            Ensemble, révélons
-            <br>
-            <em>votre potentiel.</em>
+            Parlons de votre projet.
         </h2>
 
         <p>
-            Aide aux devoirs, remise à niveau et accompagnement
-            personnalisé du primaire au lycée.
+            Décrivez-nous votre besoin et recevez
+            une réponse adaptée à votre situation.
         </p>
 
         <a class="btn" href="{% url 'quote' %}">
-            Commencer maintenant
+            Obtenir un devis
         </a>
 
     </div>

@@ -1,0 +1,86 @@
+[
+{
+  "model": "services.service",
+  "pk": 13,
+  "fields": {
+    "name": "Nettoyage de bureaux",
+    "short_description": "Entretien régulier des espaces professionnels.",
+    "description": "SHILO MULTI-SERVICES accompagne les entreprises dans l’entretien et la propreté de leurs bureaux.\n\nNos prestations permettent de maintenir des espaces de travail propres, agréables et accueillants pour vos collaborateurs, clients et visiteurs.\n\nCE QUE NOUS PROPOSONS\n\n• Nettoyage des bureaux et espaces de travail\n• Nettoyage des sols\n• Dépoussiérage des surfaces et mobiliers\n• Nettoyage des sanitaires\n• Nettoyage des espaces communs\n• Vidage et gestion des corbeilles\n• Entretien régulier ou ponctuel\n\nPOUR QUI ?\n\nCette prestation s’adresse notamment aux entreprises, commerces, associations, cabinets, administrations et autres espaces professionnels.\n\nUNE SOLUTION ADAPTÉE\n\nNous adaptons la fréquence et le niveau d’intervention aux besoins de chaque établissement.\n\nVous pouvez nous contacter pour définir ensemble les prestations nécessaires à votre espace professionnel.",
+    "included_services": "",
+    "target_clients": "",
+    "frequency": "",
+    "benefits": "",
+    "active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 14,
+  "fields": {
+    "name": "Nettoyage de logements",
+    "short_description": "Maison, appartement et remise en état.",
+    "description": "SHILO MULTI-SERVICES propose des prestations de nettoyage pour les maisons et appartements.\n\nNotre objectif est de vous permettre de profiter d’un logement propre, entretenu et agréable au quotidien.\n\nNOS PRESTATIONS\n\n• Nettoyage général du logement\n• Nettoyage des sols\n• Dépoussiérage des meubles et surfaces\n• Nettoyage de la cuisine\n• Nettoyage des salles de bains et sanitaires\n• Nettoyage des vitres selon les besoins\n• Remise en état du logement\n\nPOUR QUI ?\n\nCette prestation convient aux particuliers, propriétaires, locataires, bailleurs et personnes souhaitant bénéficier d’un entretien régulier ou ponctuel.\n\nINTERVENTION SUR MESURE\n\nChaque logement étant différent, nous adaptons notre intervention à sa superficie, son état et vos besoins.\n\nContactez-nous pour obtenir une estimation adaptée à votre situation.",
+    "included_services": "",
+    "target_clients": "",
+    "frequency": "",
+    "benefits": "",
+    "active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 15,
+  "fields": {
+    "name": "Nettoyage après travaux",
+    "short_description": "Remise en état après chantier.",
+    "description": "Après des travaux de rénovation, de construction ou d’aménagement, SHILO MULTI-SERVICES intervient pour remettre les espaces en état.\n\nNous vous aidons à retrouver un environnement propre et prêt à être utilisé.\n\nNOS INTERVENTIONS\n\n• Élimination des poussières de chantier\n• Nettoyage des sols\n• Nettoyage des surfaces\n• Nettoyage des portes et encadrements\n• Nettoyage des sanitaires\n• Nettoyage des vitres selon les besoins\n• Nettoyage général avant occupation\n\nPOUR QUI ?\n\nCette prestation peut répondre aux besoins des particuliers, entreprises, propriétaires, professionnels du bâtiment et gestionnaires de locaux.\n\nUNE REMISE EN ÉTAT SOIGNÉE\n\nNous adaptons le nettoyage à la nature des travaux réalisés et à l’état du logement ou du local.\n\nDemandez votre devis afin d’évaluer précisément votre besoin.",
+    "included_services": "",
+    "target_clients": "",
+    "frequency": "",
+    "benefits": "",
+    "active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 16,
+  "fields": {
+    "name": "Nettoyage d'immeubles",
+    "short_description": "Entretien des parties communes.",
+    "description": "SHILO MULTI-SERVICES assure l’entretien des espaces communs des immeubles et résidences.\n\nUne bonne propreté des parties communes contribue au confort des occupants et à l’image générale de la résidence.\n\nNOS PRESTATIONS\n\n• Nettoyage des halls d’entrée\n• Entretien des couloirs\n• Nettoyage des escaliers\n• Nettoyage des ascenseurs\n• Entretien des sols\n• Nettoyage des surfaces communes\n• Vidage des corbeilles\n• Entretien régulier des espaces communs\n\nPOUR QUI ?\n\nNous pouvons accompagner les copropriétés, syndics, bailleurs, propriétaires et gestionnaires d’immeubles.\n\nFRÉQUENCE ADAPTÉE\n\nLes interventions peuvent être organisées selon les besoins de la résidence et le niveau de fréquentation des espaces communs.\n\nContactez-nous pour définir une organisation adaptée à votre immeuble.",
+    "included_services": "",
+    "target_clients": "",
+    "frequency": "",
+    "benefits": "",
+    "active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 17,
+  "fields": {
+    "name": "Nettoyage professionnel",
+    "short_description": "Solutions adaptées aux entreprises.",
+    "description": "SHILO MULTI-SERVICES propose des solutions de nettoyage adaptées aux besoins spécifiques des professionnels.\n\nNous intervenons dans différents types d’environnements afin de contribuer à maintenir des locaux propres, fonctionnels et accueillants.\n\nNOS SOLUTIONS\n\n• Entretien des locaux professionnels\n• Nettoyage des espaces de travail\n• Entretien des sols\n• Nettoyage des sanitaires\n• Entretien des espaces communs\n• Nettoyage ponctuel\n• Entretien régulier\n• Remise en état selon les besoins\n\nDES PRESTATIONS PERSONNALISÉES\n\nChaque entreprise possède ses propres contraintes. Nous pouvons donc adapter les interventions à vos locaux, vos horaires et votre organisation.\n\nPOURQUOI NOUS CHOISIR ?\n\nNotre approche privilégie la proximité, l’écoute et l’adaptation aux besoins réels de chaque client.\n\nPrésentez-nous votre projet afin que nous puissions étudier votre demande.",
+    "included_services": "",
+    "target_clients": "",
+    "frequency": "",
+    "benefits": "",
+    "active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 18,
+  "fields": {
+    "name": "Multiservices",
+    "short_description": "Une réponse globale à vos besoins.",
+    "description": "SHILO MULTI-SERVICES propose également une approche globale permettant de répondre à différents besoins d’entretien et de services.\n\nNotre objectif est de vous offrir un interlocuteur unique pour simplifier l’organisation de vos interventions.\n\nNOS SERVICES\n\n• Nettoyage et entretien\n• Remise en état\n• Entretien des espaces professionnels\n• Entretien des logements\n• Nettoyage après travaux\n• Entretien des parties communes\n• Prestations ponctuelles selon les besoins\n\nUNE SOLUTION GLOBALE\n\nVous avez plusieurs besoins ou souhaitez regrouper différentes interventions ? Nous étudions votre demande afin de construire une solution adaptée.\n\nPOUR PARTICULIERS ET PROFESSIONNELS\n\nNotre offre multiservices peut être adaptée à différents types de projets et d’environnements.\n\nPARLONS DE VOTRE PROJET\n\nDécrivez-nous vos besoins, les lieux concernés et les prestations recherchées.\n\nNous étudierons votre demande et vous proposerons une organisation adaptée.",
+    "included_services": "",
+    "target_clients": "",
+    "frequency": "",
+    "benefits": "",
+    "active": true
+  }
+}
+]

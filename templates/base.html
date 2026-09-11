@@ -7,70 +7,43 @@
 
     <meta charset="utf-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
 
     <title>
         {% block title %}
-        Shilo Multi-Services | Nettoyage et entretien professionnel
+        Shilo Multi-Services
         {% endblock %}
     </title>
 
-    <meta
-        name="description"
-        content="{% block description %}Shilo Multi-Services propose des prestations de nettoyage, entretien et multiservices pour particuliers et professionnels.{% endblock %}"
-    >
+    <meta name="description"
+          content="{% block description %}Shilo Multi-Services – nettoyage et entretien professionnel{% endblock %}">
 
-    <meta
-        name="theme-color"
-        content="#176b4d"
-    >
+    <meta name="theme-color"
+          content="#176b4d">
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <link
-        rel="canonical"
-        href="https://shilomultiservices.com{{ request.path }}"
-    >
-
-    <link
-        rel="stylesheet"
-        href="{% static 'css/site.css' %}"
-    >
+    <link rel="stylesheet"
+          href="{% static 'css/site.css' %}">
 
 </head>
 
-
 <body>
-
 
 <header class="site-header">
 
     <div class="header-container">
 
-        <a
-            class="logo"
-            href="{% url 'home' %}"
-            aria-label="Shilo Multi-Services - Accueil"
-        >
+        <a class="logo"
+           href="{% url 'home' %}"
+           aria-label="Shilo Multi-Services - Accueil">
 
-            <img
-                src="{% static 'images/logo-shilo.png' %}"
-                alt="Shilo Multi-Services"
-            >
+            <img src="{% static 'images/logo-shilo.png' %}"
+                 alt="Shilo Multi-Services">
 
         </a>
 
-
-        <nav
-            class="main-nav"
-            aria-label="Navigation principale"
-        >
+        <nav class="main-nav"
+             aria-label="Navigation principale">
 
             <a href="{% url 'home' %}">
                 Accueil
@@ -88,10 +61,8 @@
                 Contact
             </a>
 
-            <a
-                class="btn small"
-                href="{% url 'quote' %}"
-            >
+            <a class="btn small"
+               href="{% url 'quote' %}">
                 Demander un devis
             </a>
 
@@ -108,9 +79,9 @@
 
     {% for message in messages %}
 
-        <div class="flash">
-            {{ message }}
-        </div>
+    <div class="flash">
+        {{ message }}
+    </div>
 
     {% endfor %}
 
@@ -131,13 +102,10 @@
 
     <div class="footer-container">
 
-
         <div class="footer-brand">
 
-            <img
-                src="{% static 'images/logo-shilo.png' %}"
-                alt="Shilo Multi-Services"
-            >
+            <img src="{% static 'images/logo-shilo.png' %}"
+                 alt="Shilo Multi-Services">
 
             <p>
                 Nettoyage, entretien et services professionnels.
@@ -185,11 +153,9 @@
                 contact@shilomultiservices.com
             </a>
 
-            <a
-                href="https://wa.me/33667800455"
-                target="_blank"
-                rel="noopener"
-            >
+            <a href="https://wa.me/33667800455"
+               target="_blank"
+               rel="noopener">
                 WhatsApp
             </a>
 
@@ -215,7 +181,6 @@
     </div>
 
 </footer>
-
 
 </body>
 

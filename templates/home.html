@@ -1,28 +1,17 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block title %}
 Shilo Multi-Services | Nettoyage et entretien professionnel
 {% endblock %}
 
-{% block description %}
-Shilo Multi-Services propose des prestations de nettoyage, entretien et multiservices pour particuliers et professionnels.
-{% endblock %}
-
-
 {% block content %}
 
-
 <section class="hero">
-
     <div class="hero-content">
-
-        <p class="eyebrow">
-            NETTOYAGE · ENTRETIEN · MULTISERVICES
-        </p>
+        <p class="eyebrow">NETTOYAGE · ENTRETIEN · MULTISERVICES</p>
 
         <h1>
-            Un environnement propre.
-            <br>
+            Un environnement propre.<br>
             <em>Un service de confiance.</em>
         </h1>
 
@@ -34,36 +23,26 @@ Shilo Multi-Services propose des prestations de nettoyage, entretien et multiser
         </p>
 
         <div class="hero-actions">
-
-            <a class="btn"
-               href="{% url 'quote' %}">
+            <a class="btn" href="{% url 'quote' %}">
                 Demander un devis
             </a>
 
-            <a class="btn-outline"
-               href="#services">
+            <a class="btn-outline" href="#services">
                 Découvrir nos services
             </a>
-
         </div>
-
     </div>
 
-
     <div class="panel">
-
-        <div class="panel-icon">
-            ✓
-        </div>
+        <div class="panel-icon">✓</div>
 
         <h2>
             Qualité & sérénité
         </h2>
 
         <p>
-            Une organisation professionnelle, une écoute
-            attentive et des solutions adaptées à chaque
-            besoin.
+            Une organisation professionnelle, une écoute attentive
+            et des solutions adaptées à chaque besoin.
         </p>
 
         <div class="panel-line"></div>
@@ -71,33 +50,24 @@ Shilo Multi-Services propose des prestations de nettoyage, entretien et multiser
         <strong>
             Un service pensé pour vous.
         </strong>
-
     </div>
-
 </section>
 
 
-
-<section id="services"
-         class="section services-section">
+<section id="services" class="section services-section">
 
     <div class="section-heading">
-
-        <p class="eyebrow">
-            NOS PRESTATIONS
-        </p>
+        <p class="eyebrow">NOS PRESTATIONS</p>
 
         <h2>
             Des solutions pour chaque espace
         </h2>
 
         <p>
-            Découvrez nos différentes prestations de
-            nettoyage, d'entretien et de multiservices.
+            Découvrez nos différentes prestations de nettoyage,
+            d'entretien et de multiservices.
         </p>
-
     </div>
-
 
     <div class="grid">
 
@@ -117,15 +87,12 @@ Shilo Multi-Services propose des prestations de nettoyage, entretien et multiser
                 {{ service.short_description }}
             </p>
 
-            <a
-                href="{% url 'detail' service.pk %}"
-                class="service-link"
-            >
+            <a href="{% url 'detail' service.pk %}"
+               class="service-link">
                 En savoir plus →
             </a>
 
         </article>
-
 
         {% empty %}
 
@@ -145,52 +112,38 @@ Shilo Multi-Services propose des prestations de nettoyage, entretien et multiser
         {% endfor %}
 
     </div>
-
 </section>
 
 
-
-<section id="apropos"
-         class="split">
+<section id="apropos" class="split">
 
     <div>
-
-        <p class="eyebrow">
-            POURQUOI SHILO ?
-        </p>
+        <p class="eyebrow">POURQUOI SHILO ?</p>
 
         <h2>
             Professionnalisme, proximité et efficacité.
         </h2>
-
     </div>
-
 
     <div>
 
         <p>
-            Nous mettons notre savoir-faire au service
-            des particuliers, des entreprises et des
-            collectivités afin de proposer des solutions
-            adaptées à chaque environnement.
+            Nous mettons notre savoir-faire au service des particuliers,
+            des entreprises et des collectivités afin de proposer
+            des solutions adaptées à chaque environnement.
         </p>
 
         <p>
-            Notre priorité : vous offrir un service
-            sérieux, flexible et adapté à vos besoins.
+            Notre priorité : vous offrir un service sérieux,
+            flexible et adapté à vos besoins.
         </p>
 
-        <a
-            class="btn"
-            href="{% url 'contact' %}"
-        >
+        <a class="btn" href="{% url 'contact' %}">
             Nous contacter
         </a>
 
     </div>
-
 </section>
-
 
 
 <section class="cta-section">
@@ -206,20 +159,16 @@ Shilo Multi-Services propose des prestations de nettoyage, entretien et multiser
         </h2>
 
         <p>
-            Décrivez-nous votre besoin et recevez une
-            réponse adaptée à votre situation.
+            Décrivez-nous votre besoin et recevez une réponse
+            adaptée à votre situation.
         </p>
 
-        <a
-            class="btn"
-            href="{% url 'quote' %}"
-        >
+        <a class="btn" href="{% url 'quote' %}">
             Obtenir un devis
         </a>
 
     </div>
 
 </section>
-
 
 {% endblock %}

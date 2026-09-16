@@ -4,27 +4,44 @@
 <html lang="fr">
 
 <head>
-
     <meta charset="utf-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
 
     <title>
-        {% block title %}
-        Shilo Multi-Services
-        {% endblock %}
+        {% block title %}Shilo Multi-Services | Nettoyage professionnel{% endblock %}
     </title>
 
     <meta name="description"
-          content="{% block description %}Shilo Multi-Services – nettoyage et entretien professionnel{% endblock %}">
+          content="{% block description %}Shilo Multi-Services propose des services professionnels de nettoyage et d'entretien pour particuliers et professionnels. Demandez votre devis personnalisé.{% endblock %}">
+
+    <meta name="robots"
+          content="index, follow">
 
     <meta name="theme-color"
           content="#176b4d">
 
+    <link rel="canonical"
+          href="https://shilomultiservices.com{{ request.path }}">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:site_name"
+          content="Shilo Multi-Services">
+
+    <meta property="og:title"
+          content="Shilo Multi-Services | Nettoyage professionnel">
+
+    <meta property="og:description"
+          content="Services professionnels de nettoyage et d'entretien pour particuliers et professionnels. Demandez votre devis personnalisé.">
+
+    <meta property="og:url"
+          content="https://shilomultiservices.com{{ request.path }}">
+
     <link rel="stylesheet"
           href="{% static 'css/site.css' %}">
-
 </head>
 
 <body>

@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django.urls import path
 from django.contrib.sitemaps.views import sitemap
+from django.http import HttpResponse
 
 from services.views import home, quote, contact, detail
-from services.sitemaps import ServiceSitemap
-
+from services.sitemaps import ServiceSitemap, StaticViewSitemap
+from django.http import HttpResponse
 
 sitemaps = {
+    "static": StaticViewSitemap,
     "services": ServiceSitemap,
 }
 
@@ -24,5 +26,17 @@ urlpatterns = [
         sitemap,
         {"sitemaps": sitemaps},
         name="sitemap",
+    ),
+
+    path(
+        "robots.txt",
+        lambda request: HttpResponse(
+            "User-agent: *\n"
+            "Allow: /\n"
+            "Disallow: /admin/\n"
+            "Sitemap: https://shilomultiservices.com/sitemap.xml\n",
+            content_type="text/plain",
+        ),
+        name="robots_txt",
     ),
 ]

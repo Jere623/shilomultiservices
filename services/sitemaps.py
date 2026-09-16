@@ -5,6 +5,7 @@ from .models import Service
 
 
 class StaticViewSitemap(Sitemap):
+    protocol = "https"
     changefreq = "weekly"
     priority = 1.0
 
@@ -16,6 +17,7 @@ class StaticViewSitemap(Sitemap):
 
 
 class ServiceSitemap(Sitemap):
+    protocol = "https"
     changefreq = "weekly"
     priority = 0.8
 

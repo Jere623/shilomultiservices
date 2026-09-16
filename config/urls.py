@@ -22,10 +22,10 @@ urlpatterns = [
     path("services/<int:pk>/", detail, name="detail"),
 
     path(
-        "sitemap.xml",
-        sitemap,
-        {"sitemaps": sitemaps},
-        name="sitemap",
+    "sitemap.xml",
+    sitemap,
+    {"sitemaps": sitemaps},
+    name="sitemap",
     ),
 
     path(
